@@ -1,0 +1,5 @@
+Reporte generado 2026-09-24T13:22:37Z (sink C:\Docs\Estudio\Maestria Pol\15 Streaming de datos y sus aplicaciones\Proyecto Final\coldchain-streaming\data\out\metrics.sqlite, broker localhost:29092)
+
+== DLQ por motivo (134 eventos) ==
+missing_field:payload.temp_c     73
+temp_not_numeric                 61

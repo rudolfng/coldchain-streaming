@@ -1,0 +1,711 @@
+# REPLAY_SPEEDUP=1 REPLAY_START_HOURS=66.25 REPLAY_END_HOURS=67.25 make replay   (2026-09-25; salida de construccion de la imagen omitida)
+2026-09-25 15:45:05,227 INFO duplicado sensor=ULT1-b02 event_id=ULT1-b02@20201219T104100Z
+2026-09-25 15:45:05,228 INFO duplicado sensor=ULT1-b06 event_id=ULT1-b06@20201219T104100Z
+%4|1790351105.732|GETPID|coldchain-replay-producer#producer-1| [thrd:main]: Failed to acquire idempotence PID from broker kafka:9092/1: Broker: Coordinator load in progress: retrying
+2026-09-25 15:45:16,228 INFO duplicado sensor=ULT1-b04 event_id=ULT1-b04@20201219T104111Z
+2026-09-25 15:45:56,227 INFO invalido inyectado sensor=ULT1-b07 event_id=ULT1-b07@20201219T104151Z motivo=remove_temp_c
+2026-09-25 15:46:05,226 INFO invalido inyectado sensor=ULT1-b10 event_id=ULT1-b10@20201219T104200Z motivo=remove_temp_c
+2026-09-25 15:46:05,227 INFO duplicado sensor=ULT1-b03 event_id=ULT1-b03@20201219T104200Z
+2026-09-25 15:46:05,227 INFO duplicado sensor=ULT1-b12 event_id=ULT1-b12@20201219T104200Z
+2026-09-25 15:46:56,226 INFO duplicado sensor=ULT1-b13 event_id=ULT1-b13@20201219T104251Z
+2026-09-25 15:47:05,224 INFO invalido inyectado sensor=ULT1-b15 event_id=ULT1-b15@20201219T104300Z motivo=temp_c_text
+2026-09-25 15:47:16,224 INFO duplicado sensor=ULT1-b18 event_id=ULT1-b18@20201219T104311Z
+2026-09-25 15:47:16,224 INFO duplicado sensor=ULT1-b19 event_id=ULT1-b19@20201219T104311Z
+2026-09-25 15:47:26,224 INFO duplicado sensor=ULT1-b09 event_id=ULT1-b09@20201219T104321Z
+2026-09-25 15:48:06,222 INFO duplicado sensor=ULT1-b06 event_id=ULT1-b06@20201219T104401Z
+2026-09-25 15:48:26,222 INFO invalido inyectado sensor=ULT1-b20 event_id=ULT1-b20@20201219T104421Z motivo=remove_temp_c
+2026-09-25 15:48:26,222 INFO duplicado sensor=ULT1-b01 event_id=ULT1-b01@20201219T104421Z
+2026-09-25 15:48:35,221 INFO invalido inyectado sensor=ULT1-b05 event_id=ULT1-b05@20201219T104430Z motivo=remove_temp_c
+2026-09-25 15:48:55,221 INFO invalido inyectado sensor=ULT1-b11 event_id=ULT1-b11@20201219T104450Z motivo=temp_c_text
+2026-09-25 15:49:26,220 INFO invalido inyectado sensor=ULT1-b15 event_id=ULT1-b15@20201219T104521Z motivo=remove_temp_c
+2026-09-25 15:49:26,220 INFO duplicado sensor=ULT1-b11 event_id=ULT1-b11@20201219T104521Z
+2026-09-25 15:49:35,219 INFO invalido inyectado sensor=ULT1-b02 event_id=ULT1-b02@20201219T104530Z motivo=temp_c_text
+2026-09-25 15:50:16,218 INFO invalido inyectado sensor=ULT1-b18 event_id=ULT1-b18@20201219T104611Z motivo=remove_temp_c
+2026-09-25 15:51:05,216 INFO invalido inyectado sensor=ULT1-b17 event_id=ULT1-b17@20201219T104700Z motivo=remove_temp_c
+2026-09-25 15:51:05,216 INFO duplicado sensor=ULT1-b15 event_id=ULT1-b15@20201219T104700Z
+2026-09-25 15:51:25,216 INFO invalido inyectado sensor=ULT1-b13 event_id=ULT1-b13@20201219T104720Z motivo=temp_c_text
+2026-09-25 15:51:25,216 INFO duplicado sensor=ULT1-b16 event_id=ULT1-b16@20201219T104720Z
+2026-09-25 15:51:56,215 INFO duplicado sensor=ULT1-b06 event_id=ULT1-b06@20201219T104751Z
+2026-09-25 15:52:25,214 INFO duplicado sensor=ULT1-b09 event_id=ULT1-b09@20201219T104820Z
+2026-09-25 15:52:45,214 INFO duplicado sensor=ULT1-b05 event_id=ULT1-b05@20201219T104840Z
+2026-09-25 15:52:56,213 INFO duplicado sensor=ULT1-b06 event_id=ULT1-b06@20201219T104851Z
+2026-09-25 15:53:16,212 INFO duplicado sensor=ULT1-b08 event_id=ULT1-b08@20201219T104911Z
+2026-09-25 15:53:26,212 INFO duplicado sensor=ULT1-b08 event_id=ULT1-b08@20201219T104921Z
+2026-09-25 15:53:35,211 INFO duplicado sensor=ULT1-b12 event_id=ULT1-b12@20201219T104930Z
+2026-09-25 15:53:46,211 INFO invalido inyectado sensor=ULT1-b15 event_id=ULT1-b15@20201219T104941Z motivo=remove_temp_c
+2026-09-25 15:53:55,211 INFO invalido inyectado sensor=ULT1-b05 event_id=ULT1-b05@20201219T104950Z motivo=remove_temp_c
+2026-09-25 15:54:06,210 INFO duplicado sensor=ULT1-b09 event_id=ULT1-b09@20201219T105001Z
+2026-09-25 15:54:26,210 INFO duplicado sensor=ULT1-b17 event_id=ULT1-b17@20201219T105021Z
+2026-09-25 15:54:55,209 INFO duplicado sensor=ULT1-b01 event_id=ULT1-b01@20201219T105050Z
+2026-09-25 15:55:15,208 INFO invalido inyectado sensor=ULT1-b08 event_id=ULT1-b08@20201219T105110Z motivo=remove_temp_c
+2026-09-25 15:55:15,208 INFO invalido inyectado sensor=ULT1-b11 event_id=ULT1-b11@20201219T105110Z motivo=remove_temp_c
+2026-09-25 15:55:26,208 INFO duplicado sensor=ULT1-b16 event_id=ULT1-b16@20201219T105121Z
+2026-09-25 15:55:56,207 INFO duplicado sensor=ULT1-b12 event_id=ULT1-b12@20201219T105151Z
+2026-09-25 15:55:59,206 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T104600Z original_elapsed_s=300 liberado_elapsed_s=654
+2026-09-25 15:55:59,206 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T104611Z original_elapsed_s=311 liberado_elapsed_s=654
+2026-09-25 15:55:59,206 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T104620Z original_elapsed_s=320 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T104631Z original_elapsed_s=331 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T104640Z original_elapsed_s=340 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T104651Z original_elapsed_s=351 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T104700Z original_elapsed_s=360 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO duplicado sensor=ULT1-b07 event_id=ULT1-b07@20201219T104700Z
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T104711Z original_elapsed_s=371 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T104720Z original_elapsed_s=380 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T104731Z original_elapsed_s=391 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T104740Z original_elapsed_s=400 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T104751Z original_elapsed_s=411 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T104800Z original_elapsed_s=420 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T104811Z original_elapsed_s=431 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T104820Z original_elapsed_s=440 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T104831Z original_elapsed_s=451 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T104840Z original_elapsed_s=460 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T104851Z original_elapsed_s=471 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T104900Z original_elapsed_s=480 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T104911Z original_elapsed_s=491 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T104921Z original_elapsed_s=501 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T104930Z original_elapsed_s=510 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T104941Z original_elapsed_s=521 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T104950Z original_elapsed_s=530 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T105001Z original_elapsed_s=541 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T105010Z original_elapsed_s=550 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T105021Z original_elapsed_s=561 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T105030Z original_elapsed_s=570 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T105041Z original_elapsed_s=581 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T105050Z original_elapsed_s=590 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T105101Z original_elapsed_s=601 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T105110Z original_elapsed_s=610 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T105121Z original_elapsed_s=621 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T105130Z original_elapsed_s=630 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T105141Z original_elapsed_s=641 liberado_elapsed_s=654
+2026-09-25 15:55:59,207 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T105151Z original_elapsed_s=651 liberado_elapsed_s=654
+2026-09-25 15:56:05,207 INFO duplicado sensor=ULT1-b16 event_id=ULT1-b16@20201219T105200Z
+2026-09-25 15:56:36,205 INFO duplicado sensor=ULT1-b02 event_id=ULT1-b02@20201219T105231Z
+2026-09-25 15:56:45,205 INFO invalido inyectado sensor=ULT1-b20 event_id=ULT1-b20@20201219T105240Z motivo=temp_c_text
+2026-09-25 15:57:16,205 INFO duplicado sensor=ULT1-b06 event_id=ULT1-b06@20201219T105311Z
+2026-09-25 15:57:16,205 INFO duplicado sensor=ULT1-b11 event_id=ULT1-b11@20201219T105311Z
+2026-09-25 15:57:25,205 INFO duplicado sensor=ULT1-b05 event_id=ULT1-b05@20201219T105320Z
+2026-09-25 15:57:36,203 INFO duplicado sensor=ULT1-b06 event_id=ULT1-b06@20201219T105331Z
+2026-09-25 15:58:16,202 INFO invalido inyectado sensor=ULT1-b07 event_id=ULT1-b07@20201219T105411Z motivo=temp_c_text
+2026-09-25 15:58:16,203 INFO duplicado sensor=ULT1-b05 event_id=ULT1-b05@20201219T105411Z
+2026-09-25 15:58:26,203 INFO duplicado sensor=ULT1-b08 event_id=ULT1-b08@20201219T105421Z
+2026-09-25 15:58:26,203 INFO duplicado sensor=ULT1-b10 event_id=ULT1-b10@20201219T105421Z
+2026-09-25 15:58:26,203 INFO duplicado sensor=ULT1-b15 event_id=ULT1-b15@20201219T105421Z
+2026-09-25 15:58:46,201 INFO invalido inyectado sensor=ULT1-b16 event_id=ULT1-b16@20201219T105441Z motivo=remove_temp_c
+2026-09-25 15:59:06,200 INFO duplicado sensor=ULT1-b09 event_id=ULT1-b09@20201219T105501Z
+2026-09-25 15:59:35,198 INFO duplicado sensor=ULT1-b01 event_id=ULT1-b01@20201219T105530Z
+2026-09-25 15:59:46,198 INFO duplicado sensor=ULT1-b10 event_id=ULT1-b10@20201219T105541Z
+2026-09-25 15:59:46,198 INFO duplicado sensor=ULT1-b13 event_id=ULT1-b13@20201219T105541Z
+2026-09-25 15:59:46,198 INFO duplicado sensor=ULT1-b17 event_id=ULT1-b17@20201219T105541Z
+2026-09-25 16:00:26,198 INFO invalido inyectado sensor=ULT1-b06 event_id=ULT1-b06@20201219T105621Z motivo=temp_c_text
+2026-09-25 16:00:26,198 INFO duplicado sensor=ULT1-b05 event_id=ULT1-b05@20201219T105621Z
+2026-09-25 16:00:35,197 INFO duplicado sensor=ULT1-b19 event_id=ULT1-b19@20201219T105630Z
+2026-09-25 16:00:46,197 INFO invalido inyectado sensor=ULT1-b10 event_id=ULT1-b10@20201219T105641Z motivo=temp_c_text
+2026-09-25 16:00:46,197 INFO duplicado sensor=ULT1-b18 event_id=ULT1-b18@20201219T105641Z
+2026-09-25 16:00:55,197 INFO duplicado sensor=ULT1-b05 event_id=ULT1-b05@20201219T105650Z
+2026-09-25 16:01:55,195 INFO duplicado sensor=ULT1-b04 event_id=ULT1-b04@20201219T105750Z
+2026-09-25 16:02:06,194 INFO duplicado sensor=ULT1-b05 event_id=ULT1-b05@20201219T105801Z
+2026-09-25 16:02:16,194 INFO invalido inyectado sensor=ULT1-b06 event_id=ULT1-b06@20201219T105811Z motivo=temp_c_text
+2026-09-25 16:03:05,192 INFO invalido inyectado sensor=ULT1-b02 event_id=ULT1-b02@20201219T105900Z motivo=remove_temp_c
+2026-09-25 16:03:25,192 INFO duplicado sensor=ULT1-b17 event_id=ULT1-b17@20201219T105920Z
+2026-09-25 16:04:25,191 INFO duplicado sensor=ULT1-b19 event_id=ULT1-b19@20201219T110020Z
+2026-09-25 16:04:36,189 INFO invalido inyectado sensor=ULT1-b02 event_id=ULT1-b02@20201219T110031Z motivo=temp_c_text
+2026-09-25 16:04:36,190 INFO duplicado sensor=ULT1-b05 event_id=ULT1-b05@20201219T110031Z
+2026-09-25 16:04:36,190 INFO duplicado sensor=ULT1-b09 event_id=ULT1-b09@20201219T110031Z
+2026-09-25 16:05:15,189 INFO duplicado sensor=ULT1-b03 event_id=ULT1-b03@20201219T110110Z
+2026-09-25 16:05:46,187 INFO invalido inyectado sensor=ULT1-b13 event_id=ULT1-b13@20201219T110141Z motivo=temp_c_text
+2026-09-25 16:06:06,187 INFO duplicado sensor=ULT1-b09 event_id=ULT1-b09@20201219T110201Z
+2026-09-25 16:06:06,187 INFO duplicado sensor=ULT1-b15 event_id=ULT1-b15@20201219T110201Z
+2026-09-25 16:06:26,187 INFO duplicado sensor=ULT1-b11 event_id=ULT1-b11@20201219T110221Z
+2026-09-25 16:06:26,187 INFO duplicado sensor=ULT1-b19 event_id=ULT1-b19@20201219T110221Z
+2026-09-25 16:07:26,185 INFO duplicado sensor=ULT1-b20 event_id=ULT1-b20@20201219T110321Z
+2026-09-25 16:08:16,182 INFO duplicado sensor=ULT1-b06 event_id=ULT1-b06@20201219T110411Z
+2026-09-25 16:08:16,182 INFO duplicado sensor=ULT1-b13 event_id=ULT1-b13@20201219T110411Z
+2026-09-25 16:09:16,181 INFO duplicado sensor=ULT1-b11 event_id=ULT1-b11@20201219T110511Z
+2026-09-25 16:09:36,180 INFO duplicado sensor=ULT1-b15 event_id=ULT1-b15@20201219T110531Z
+2026-09-25 16:09:56,179 INFO invalido inyectado sensor=ULT1-b11 event_id=ULT1-b11@20201219T110551Z motivo=temp_c_text
+2026-09-25 16:09:56,180 INFO duplicado sensor=ULT1-b13 event_id=ULT1-b13@20201219T110551Z
+2026-09-25 16:10:06,179 INFO duplicado sensor=ULT1-b15 event_id=ULT1-b15@20201219T110601Z
+2026-09-25 16:10:06,179 INFO duplicado sensor=ULT1-b16 event_id=ULT1-b16@20201219T110601Z
+2026-09-25 16:10:15,179 INFO duplicado sensor=ULT1-b20 event_id=ULT1-b20@20201219T110610Z
+2026-09-25 16:10:55,177 INFO duplicado sensor=ULT1-b11 event_id=ULT1-b11@20201219T110650Z
+2026-09-25 16:11:06,177 INFO duplicado sensor=ULT1-b07 event_id=ULT1-b07@20201219T110701Z
+2026-09-25 16:12:15,175 INFO duplicado sensor=ULT1-b11 event_id=ULT1-b11@20201219T110810Z
+2026-09-25 16:13:25,172 INFO duplicado sensor=ULT1-b17 event_id=ULT1-b17@20201219T110920Z
+2026-09-25 16:13:36,171 INFO invalido inyectado sensor=ULT1-b16 event_id=ULT1-b16@20201219T110931Z motivo=remove_temp_c
+2026-09-25 16:13:56,171 INFO invalido inyectado sensor=ULT1-b16 event_id=ULT1-b16@20201219T110951Z motivo=remove_temp_c
+2026-09-25 16:13:56,172 INFO duplicado sensor=ULT1-b20 event_id=ULT1-b20@20201219T110951Z
+2026-09-25 16:14:25,171 INFO duplicado sensor=ULT1-b02 event_id=ULT1-b02@20201219T111020Z
+2026-09-25 16:14:36,170 INFO duplicado sensor=ULT1-b08 event_id=ULT1-b08@20201219T111031Z
+2026-09-25 16:15:15,169 INFO duplicado sensor=ULT1-b07 event_id=ULT1-b07@20201219T111110Z
+2026-09-25 16:15:35,168 INFO invalido inyectado sensor=ULT1-b06 event_id=ULT1-b06@20201219T111130Z motivo=temp_c_text
+2026-09-25 16:15:35,168 INFO duplicado sensor=ULT1-b05 event_id=ULT1-b05@20201219T111130Z
+2026-09-25 16:15:35,168 INFO duplicado sensor=ULT1-b18 event_id=ULT1-b18@20201219T111130Z
+2026-09-25 16:15:55,168 INFO duplicado sensor=ULT1-b03 event_id=ULT1-b03@20201219T111150Z
+2026-09-25 16:17:06,165 INFO invalido inyectado sensor=ULT1-b19 event_id=ULT1-b19@20201219T111301Z motivo=temp_c_text
+2026-09-25 16:17:36,164 INFO duplicado sensor=ULT1-b01 event_id=ULT1-b01@20201219T111331Z
+2026-09-25 16:17:45,164 INFO duplicado sensor=ULT1-b13 event_id=ULT1-b13@20201219T111340Z
+2026-09-25 16:18:05,163 INFO duplicado sensor=ULT1-b12 event_id=ULT1-b12@20201219T111400Z
+2026-09-25 16:18:45,162 INFO duplicado sensor=ULT1-b18 event_id=ULT1-b18@20201219T111440Z
+2026-09-25 16:19:45,160 INFO invalido inyectado sensor=ULT1-b08 event_id=ULT1-b08@20201219T111540Z motivo=temp_c_text
+2026-09-25 16:19:45,160 INFO duplicado sensor=ULT1-b18 event_id=ULT1-b18@20201219T111540Z
+2026-09-25 16:19:56,160 INFO duplicado sensor=ULT1-b02 event_id=ULT1-b02@20201219T111551Z
+2026-09-25 16:19:59,158 INFO reenvio en rafaga sensor=ULT1-b03 event_id=ULT1-b03@20201219T111241Z emit_elapsed_s=2094
+2026-09-25 16:19:59,158 INFO reenvio en rafaga sensor=ULT1-b03 event_id=ULT1-b03@20201219T111250Z emit_elapsed_s=2094
+2026-09-25 16:19:59,158 INFO reenvio en rafaga sensor=ULT1-b03 event_id=ULT1-b03@20201219T111301Z emit_elapsed_s=2094
+2026-09-25 16:19:59,158 INFO reenvio en rafaga sensor=ULT1-b03 event_id=ULT1-b03@20201219T111310Z emit_elapsed_s=2094
+2026-09-25 16:19:59,159 INFO reenvio en rafaga sensor=ULT1-b03 event_id=ULT1-b03@20201219T111321Z emit_elapsed_s=2094
+2026-09-25 16:19:59,159 INFO reenvio en rafaga sensor=ULT1-b03 event_id=ULT1-b03@20201219T111331Z emit_elapsed_s=2094
+2026-09-25 16:19:59,159 INFO reenvio en rafaga sensor=ULT1-b03 event_id=ULT1-b03@20201219T111340Z emit_elapsed_s=2094
+2026-09-25 16:19:59,159 INFO reenvio en rafaga sensor=ULT1-b03 event_id=ULT1-b03@20201219T111351Z emit_elapsed_s=2094
+2026-09-25 16:19:59,159 INFO reenvio en rafaga sensor=ULT1-b03 event_id=ULT1-b03@20201219T111400Z emit_elapsed_s=2094
+2026-09-25 16:19:59,159 INFO reenvio en rafaga sensor=ULT1-b03 event_id=ULT1-b03@20201219T111411Z emit_elapsed_s=2094
+2026-09-25 16:19:59,159 INFO reenvio en rafaga sensor=ULT1-b03 event_id=ULT1-b03@20201219T111420Z emit_elapsed_s=2094
+2026-09-25 16:19:59,159 INFO reenvio en rafaga sensor=ULT1-b03 event_id=ULT1-b03@20201219T111431Z emit_elapsed_s=2094
+2026-09-25 16:19:59,159 INFO reenvio en rafaga sensor=ULT1-b03 event_id=ULT1-b03@20201219T111440Z emit_elapsed_s=2094
+2026-09-25 16:19:59,159 INFO reenvio en rafaga sensor=ULT1-b03 event_id=ULT1-b03@20201219T111451Z emit_elapsed_s=2094
+2026-09-25 16:19:59,159 INFO reenvio en rafaga sensor=ULT1-b03 event_id=ULT1-b03@20201219T111500Z emit_elapsed_s=2094
+2026-09-25 16:19:59,159 INFO reenvio en rafaga sensor=ULT1-b03 event_id=ULT1-b03@20201219T111511Z emit_elapsed_s=2094
+2026-09-25 16:19:59,159 INFO reenvio en rafaga sensor=ULT1-b03 event_id=ULT1-b03@20201219T111520Z emit_elapsed_s=2094
+2026-09-25 16:19:59,159 INFO reenvio en rafaga sensor=ULT1-b03 event_id=ULT1-b03@20201219T111531Z emit_elapsed_s=2094
+2026-09-25 16:19:59,159 INFO reenvio en rafaga sensor=ULT1-b03 event_id=ULT1-b03@20201219T111540Z emit_elapsed_s=2094
+2026-09-25 16:19:59,159 INFO reenvio en rafaga sensor=ULT1-b03 event_id=ULT1-b03@20201219T111551Z emit_elapsed_s=2094
+2026-09-25 16:20:05,159 INFO duplicado sensor=ULT1-b20 event_id=ULT1-b20@20201219T111600Z
+2026-09-25 16:20:46,158 INFO invalido inyectado sensor=ULT1-b16 event_id=ULT1-b16@20201219T111641Z motivo=remove_temp_c
+2026-09-25 16:20:46,158 INFO invalido inyectado sensor=ULT1-b18 event_id=ULT1-b18@20201219T111641Z motivo=remove_temp_c
+2026-09-25 16:20:55,158 INFO duplicado sensor=ULT1-b15 event_id=ULT1-b15@20201219T111650Z
+2026-09-25 16:21:15,157 INFO duplicado sensor=ULT1-b19 event_id=ULT1-b19@20201219T111710Z
+2026-09-25 16:21:35,156 INFO duplicado sensor=ULT1-b15 event_id=ULT1-b15@20201219T111730Z
+2026-09-25 16:21:55,156 INFO duplicado sensor=ULT1-b17 event_id=ULT1-b17@20201219T111750Z
+2026-09-25 16:22:26,155 INFO duplicado sensor=ULT1-b12 event_id=ULT1-b12@20201219T111821Z
+2026-09-25 16:22:35,154 INFO duplicado sensor=ULT1-b17 event_id=ULT1-b17@20201219T111830Z
+2026-09-25 16:22:35,154 INFO duplicado sensor=ULT1-b20 event_id=ULT1-b20@20201219T111830Z
+2026-09-25 16:22:46,154 INFO duplicado sensor=ULT1-b13 event_id=ULT1-b13@20201219T111841Z
+2026-09-25 16:22:56,154 INFO duplicado sensor=ULT1-b12 event_id=ULT1-b12@20201219T111851Z
+2026-09-25 16:23:05,152 INFO duplicado sensor=ULT1-b10 event_id=ULT1-b10@20201219T111900Z
+2026-09-25 16:23:16,152 INFO duplicado sensor=ULT1-b17 event_id=ULT1-b17@20201219T111911Z
+2026-09-25 16:24:05,151 INFO duplicado sensor=ULT1-b17 event_id=ULT1-b17@20201219T112000Z
+2026-09-25 16:25:05,149 INFO duplicado sensor=ULT1-b04 event_id=ULT1-b04@20201219T112100Z
+2026-09-25 16:25:05,149 INFO duplicado sensor=ULT1-b20 event_id=ULT1-b20@20201219T112100Z
+2026-09-25 16:25:16,149 INFO invalido inyectado sensor=ULT1-b03 event_id=ULT1-b03@20201219T112111Z motivo=temp_c_text
+2026-09-25 16:25:26,149 INFO duplicado sensor=ULT1-b14 event_id=ULT1-b14@20201219T112121Z
+2026-09-25 16:25:46,148 INFO duplicado sensor=ULT1-b20 event_id=ULT1-b20@20201219T112141Z
+2026-09-25 16:26:06,147 INFO duplicado sensor=ULT1-b20 event_id=ULT1-b20@20201219T112201Z
+2026-09-25 16:26:15,146 INFO duplicado sensor=ULT1-b18 event_id=ULT1-b18@20201219T112210Z
+2026-09-25 16:26:46,146 INFO invalido inyectado sensor=ULT1-b09 event_id=ULT1-b09@20201219T112241Z motivo=remove_temp_c
+2026-09-25 16:26:46,146 INFO duplicado sensor=ULT1-b04 event_id=ULT1-b04@20201219T112241Z
+2026-09-25 16:27:35,144 INFO invalido inyectado sensor=ULT1-b20 event_id=ULT1-b20@20201219T112330Z motivo=remove_temp_c
+2026-09-25 16:27:35,144 INFO duplicado sensor=ULT1-b11 event_id=ULT1-b11@20201219T112330Z
+2026-09-25 16:27:46,144 INFO duplicado sensor=ULT1-b06 event_id=ULT1-b06@20201219T112341Z
+2026-09-25 16:28:05,143 INFO invalido inyectado sensor=ULT1-b11 event_id=ULT1-b11@20201219T112400Z motivo=remove_temp_c
+2026-09-25 16:28:16,143 INFO invalido inyectado sensor=ULT1-b01 event_id=ULT1-b01@20201219T112411Z motivo=remove_temp_c
+2026-09-25 16:28:25,143 INFO duplicado sensor=ULT1-b20 event_id=ULT1-b20@20201219T112420Z
+2026-09-25 16:29:05,140 INFO duplicado sensor=ULT1-b13 event_id=ULT1-b13@20201219T112500Z
+2026-09-25 16:29:36,140 INFO invalido inyectado sensor=ULT1-b05 event_id=ULT1-b05@20201219T112531Z motivo=remove_temp_c
+2026-09-25 16:29:36,140 INFO duplicado sensor=ULT1-b02 event_id=ULT1-b02@20201219T112531Z
+2026-09-25 16:29:36,140 INFO duplicado sensor=ULT1-b06 event_id=ULT1-b06@20201219T112531Z
+2026-09-25 16:29:56,140 INFO duplicado sensor=ULT1-b05 event_id=ULT1-b05@20201219T112551Z
+2026-09-25 16:30:05,139 INFO duplicado sensor=ULT1-b05 event_id=ULT1-b05@20201219T112600Z
+2026-09-25 16:31:06,137 INFO invalido inyectado sensor=ULT1-b03 event_id=ULT1-b03@20201219T112701Z motivo=temp_c_text
+2026-09-25 16:31:06,137 INFO duplicado sensor=ULT1-b05 event_id=ULT1-b05@20201219T112701Z
+2026-09-25 16:31:15,137 INFO duplicado sensor=ULT1-b20 event_id=ULT1-b20@20201219T112710Z
+2026-09-25 16:31:35,136 INFO duplicado sensor=ULT1-b08 event_id=ULT1-b08@20201219T112730Z
+2026-09-25 16:31:35,136 INFO duplicado sensor=ULT1-b17 event_id=ULT1-b17@20201219T112730Z
+2026-09-25 16:31:46,136 INFO duplicado sensor=ULT1-b18 event_id=ULT1-b18@20201219T112741Z
+2026-09-25 16:32:15,135 INFO duplicado sensor=ULT1-b02 event_id=ULT1-b02@20201219T112810Z
+2026-09-25 16:32:26,135 INFO duplicado sensor=ULT1-b05 event_id=ULT1-b05@20201219T112821Z
+2026-09-25 16:33:05,133 INFO duplicado sensor=ULT1-b08 event_id=ULT1-b08@20201219T112900Z
+2026-09-25 16:33:05,133 INFO duplicado sensor=ULT1-b15 event_id=ULT1-b15@20201219T112900Z
+2026-09-25 16:33:16,133 INFO duplicado sensor=ULT1-b06 event_id=ULT1-b06@20201219T112911Z
+2026-09-25 16:33:36,132 INFO invalido inyectado sensor=ULT1-b19 event_id=ULT1-b19@20201219T112931Z motivo=temp_c_text
+2026-09-25 16:33:45,132 INFO duplicado sensor=ULT1-b04 event_id=ULT1-b04@20201219T112940Z
+2026-09-25 16:34:36,130 INFO duplicado sensor=ULT1-b06 event_id=ULT1-b06@20201219T113031Z
+2026-09-25 16:34:45,130 INFO duplicado sensor=ULT1-b06 event_id=ULT1-b06@20201219T113040Z
+2026-09-25 16:34:59,128 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T110601Z original_elapsed_s=1501 liberado_elapsed_s=2994
+2026-09-25 16:34:59,128 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T110610Z original_elapsed_s=1510 liberado_elapsed_s=2994
+2026-09-25 16:34:59,128 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T110621Z original_elapsed_s=1521 liberado_elapsed_s=2994
+2026-09-25 16:34:59,129 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T110630Z original_elapsed_s=1530 liberado_elapsed_s=2994
+2026-09-25 16:34:59,129 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T110641Z original_elapsed_s=1541 liberado_elapsed_s=2994
+2026-09-25 16:34:59,129 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T110650Z original_elapsed_s=1550 liberado_elapsed_s=2994
+2026-09-25 16:34:59,129 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T110701Z original_elapsed_s=1561 liberado_elapsed_s=2994
+2026-09-25 16:34:59,129 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T110710Z original_elapsed_s=1570 liberado_elapsed_s=2994
+2026-09-25 16:34:59,129 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T110721Z original_elapsed_s=1581 liberado_elapsed_s=2994
+2026-09-25 16:34:59,129 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T110730Z original_elapsed_s=1590 liberado_elapsed_s=2994
+2026-09-25 16:34:59,129 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T110741Z original_elapsed_s=1601 liberado_elapsed_s=2994
+2026-09-25 16:34:59,129 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T110750Z original_elapsed_s=1610 liberado_elapsed_s=2994
+2026-09-25 16:34:59,129 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T110801Z original_elapsed_s=1621 liberado_elapsed_s=2994
+2026-09-25 16:34:59,129 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T110810Z original_elapsed_s=1630 liberado_elapsed_s=2994
+2026-09-25 16:34:59,129 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T110821Z original_elapsed_s=1641 liberado_elapsed_s=2994
+2026-09-25 16:34:59,129 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T110831Z original_elapsed_s=1651 liberado_elapsed_s=2994
+2026-09-25 16:34:59,129 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T110840Z original_elapsed_s=1660 liberado_elapsed_s=2994
+2026-09-25 16:34:59,129 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T110851Z original_elapsed_s=1671 liberado_elapsed_s=2994
+2026-09-25 16:34:59,129 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T110900Z original_elapsed_s=1680 liberado_elapsed_s=2994
+2026-09-25 16:34:59,129 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T110911Z original_elapsed_s=1691 liberado_elapsed_s=2994
+2026-09-25 16:34:59,129 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T110920Z original_elapsed_s=1700 liberado_elapsed_s=2994
+2026-09-25 16:34:59,129 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T110931Z original_elapsed_s=1711 liberado_elapsed_s=2994
+2026-09-25 16:34:59,129 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T110940Z original_elapsed_s=1720 liberado_elapsed_s=2994
+2026-09-25 16:34:59,129 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T110951Z original_elapsed_s=1731 liberado_elapsed_s=2994
+2026-09-25 16:34:59,129 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T111000Z original_elapsed_s=1740 liberado_elapsed_s=2994
+2026-09-25 16:34:59,129 INFO duplicado sensor=ULT1-b12 event_id=ULT1-b12@20201219T111000Z
+2026-09-25 16:34:59,129 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T111011Z original_elapsed_s=1751 liberado_elapsed_s=2994
+2026-09-25 16:34:59,129 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T111020Z original_elapsed_s=1760 liberado_elapsed_s=2994
+2026-09-25 16:34:59,129 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T111031Z original_elapsed_s=1771 liberado_elapsed_s=2994
+2026-09-25 16:34:59,129 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T111041Z original_elapsed_s=1781 liberado_elapsed_s=2994
+2026-09-25 16:34:59,129 INFO retenido y liberado sensor=ULT1-b12 event_id=ULT1-b12@20201219T111051Z original_elapsed_s=1791 liberado_elapsed_s=2994
+2026-09-25 16:35:26,128 INFO invalido inyectado sensor=ULT1-b01 event_id=ULT1-b01@20201219T113121Z motivo=temp_c_text
+2026-09-25 16:36:06,127 INFO duplicado sensor=ULT1-b02 event_id=ULT1-b02@20201219T113201Z
+2026-09-25 16:36:26,127 INFO duplicado sensor=ULT1-b11 event_id=ULT1-b11@20201219T113221Z
+2026-09-25 16:36:26,127 INFO duplicado sensor=ULT1-b19 event_id=ULT1-b19@20201219T113221Z
+2026-09-25 16:36:35,126 INFO duplicado sensor=ULT1-b07 event_id=ULT1-b07@20201219T113230Z
+2026-09-25 16:36:46,126 INFO duplicado sensor=ULT1-b05 event_id=ULT1-b05@20201219T113241Z
+2026-09-25 16:36:46,126 INFO duplicado sensor=ULT1-b15 event_id=ULT1-b15@20201219T113241Z
+2026-09-25 16:36:55,126 INFO duplicado sensor=ULT1-b15 event_id=ULT1-b15@20201219T113250Z
+2026-09-25 16:37:15,124 INFO invalido inyectado sensor=ULT1-b15 event_id=ULT1-b15@20201219T113310Z motivo=remove_temp_c
+2026-09-25 16:37:26,124 INFO duplicado sensor=ULT1-b16 event_id=ULT1-b16@20201219T113321Z
+2026-09-25 16:37:35,124 INFO duplicado sensor=ULT1-b12 event_id=ULT1-b12@20201219T113330Z
+2026-09-25 16:37:46,124 INFO duplicado sensor=ULT1-b04 event_id=ULT1-b04@20201219T113341Z
+2026-09-25 16:38:25,122 INFO duplicado sensor=ULT1-b19 event_id=ULT1-b19@20201219T113420Z
+2026-09-25 16:38:36,121 INFO duplicado sensor=ULT1-b02 event_id=ULT1-b02@20201219T113431Z
+2026-09-25 16:38:45,121 INFO invalido inyectado sensor=ULT1-b01 event_id=ULT1-b01@20201219T113440Z motivo=remove_temp_c
+2026-09-25 16:38:56,121 INFO duplicado sensor=ULT1-b18 event_id=ULT1-b18@20201219T113451Z
+2026-09-25 16:39:16,121 INFO duplicado sensor=ULT1-b03 event_id=ULT1-b03@20201219T113511Z
+2026-09-25 16:40:05,119 INFO duplicado sensor=ULT1-b14 event_id=ULT1-b14@20201219T113600Z
+2026-09-25 16:40:16,118 INFO invalido inyectado sensor=ULT1-b11 event_id=ULT1-b11@20201219T113611Z motivo=temp_c_text
+2026-09-25 16:40:26,119 INFO duplicado sensor=ULT1-b02 event_id=ULT1-b02@20201219T113621Z
+2026-09-25 16:40:36,117 INFO duplicado sensor=ULT1-b19 event_id=ULT1-b19@20201219T113631Z
+2026-09-25 16:41:35,116 INFO duplicado sensor=ULT1-b01 event_id=ULT1-b01@20201219T113730Z
+2026-09-25 16:41:55,116 INFO duplicado sensor=ULT1-b04 event_id=ULT1-b04@20201219T113750Z
+2026-09-25 16:42:15,115 INFO duplicado sensor=ULT1-b17 event_id=ULT1-b17@20201219T113810Z
+2026-09-25 16:42:35,114 INFO duplicado sensor=ULT1-b11 event_id=ULT1-b11@20201219T113830Z
+2026-09-25 16:42:56,114 INFO duplicado sensor=ULT1-b10 event_id=ULT1-b10@20201219T113851Z
+2026-09-25 16:43:05,112 INFO invalido inyectado sensor=ULT1-b13 event_id=ULT1-b13@20201219T113900Z motivo=remove_temp_c
+2026-09-25 16:43:25,112 INFO duplicado sensor=ULT1-b03 event_id=ULT1-b03@20201219T113920Z
+2026-09-25 16:43:25,112 INFO duplicado sensor=ULT1-b10 event_id=ULT1-b10@20201219T113920Z
+2026-09-25 16:43:45,111 INFO invalido inyectado sensor=ULT1-b10 event_id=ULT1-b10@20201219T113940Z motivo=remove_temp_c
+2026-09-25 16:43:56,111 INFO invalido inyectado sensor=ULT1-b05 event_id=ULT1-b05@20201219T113951Z motivo=remove_temp_c
+2026-09-25 16:43:56,111 INFO duplicado sensor=ULT1-b09 event_id=ULT1-b09@20201219T113951Z
+2026-09-25 16:44:05,110 INFO invalido inyectado sensor=ULT1-b20 event_id=ULT1-b20@20201219T114000Z motivo=remove_temp_c
+2026-09-25 16:44:05,110 INFO duplicado sensor=ULT1-b15 event_id=ULT1-b15@20201219T114000Z
+2026-09-25 16:44:16,110 INFO invalido inyectado sensor=ULT1-b16 event_id=ULT1-b16@20201219T114011Z motivo=temp_c_text
+2026-09-25 16:44:25,110 INFO duplicado sensor=ULT1-b16 event_id=ULT1-b16@20201219T114020Z
+2026-09-25 16:44:36,110 INFO duplicado sensor=ULT1-b15 event_id=ULT1-b15@20201219T114031Z
+2026-09-25 16:44:56,109 INFO invalido inyectado sensor=ULT1-b03 event_id=ULT1-b03@20201219T114051Z motivo=temp_c_text
+2026-09-25 16:44:56,109 INFO invalido inyectado sensor=ULT1-b16 event_id=ULT1-b16@20201219T114051Z motivo=remove_temp_c
+{
+  "events": 7373,
+  "by_kind": {
+    "normal": 7200,
+    "duplicate": 153,
+    "invalid": 51,
+    "burst_resend": 20
+  },
+  "invalid": 51,
+  "duplicates": 153,
+  "burst_resends": 20,
+  "released_late": [
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T104600Z",
+      "original_elapsed_s": 300.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T104611Z",
+      "original_elapsed_s": 311.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T104620Z",
+      "original_elapsed_s": 320.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T104631Z",
+      "original_elapsed_s": 331.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T104640Z",
+      "original_elapsed_s": 340.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T104651Z",
+      "original_elapsed_s": 351.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T104700Z",
+      "original_elapsed_s": 360.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T104711Z",
+      "original_elapsed_s": 371.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T104720Z",
+      "original_elapsed_s": 380.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T104731Z",
+      "original_elapsed_s": 391.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T104740Z",
+      "original_elapsed_s": 400.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T104751Z",
+      "original_elapsed_s": 411.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T104800Z",
+      "original_elapsed_s": 420.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T104811Z",
+      "original_elapsed_s": 431.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T104820Z",
+      "original_elapsed_s": 440.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T104831Z",
+      "original_elapsed_s": 451.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T104840Z",
+      "original_elapsed_s": 460.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T104851Z",
+      "original_elapsed_s": 471.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T104900Z",
+      "original_elapsed_s": 480.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T104911Z",
+      "original_elapsed_s": 491.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T104921Z",
+      "original_elapsed_s": 501.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T104930Z",
+      "original_elapsed_s": 510.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T104941Z",
+      "original_elapsed_s": 521.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T104950Z",
+      "original_elapsed_s": 530.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T105001Z",
+      "original_elapsed_s": 541.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T105010Z",
+      "original_elapsed_s": 550.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T105021Z",
+      "original_elapsed_s": 561.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T105030Z",
+      "original_elapsed_s": 570.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T105041Z",
+      "original_elapsed_s": 581.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T105050Z",
+      "original_elapsed_s": 590.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T105101Z",
+      "original_elapsed_s": 601.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T105110Z",
+      "original_elapsed_s": 610.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T105121Z",
+      "original_elapsed_s": 621.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T105130Z",
+      "original_elapsed_s": 630.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T105141Z",
+      "original_elapsed_s": 641.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b07",
+      "event_id": "ULT1-b07@20201219T105151Z",
+      "original_elapsed_s": 651.0,
+      "released_elapsed_s": 654.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T110601Z",
+      "original_elapsed_s": 1501.0,
+      "released_elapsed_s": 2994.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T110610Z",
+      "original_elapsed_s": 1510.0,
+      "released_elapsed_s": 2994.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T110621Z",
+      "original_elapsed_s": 1521.0,
+      "released_elapsed_s": 2994.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T110630Z",
+      "original_elapsed_s": 1530.0,
+      "released_elapsed_s": 2994.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T110641Z",
+      "original_elapsed_s": 1541.0,
+      "released_elapsed_s": 2994.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T110650Z",
+      "original_elapsed_s": 1550.0,
+      "released_elapsed_s": 2994.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T110701Z",
+      "original_elapsed_s": 1561.0,
+      "released_elapsed_s": 2994.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T110710Z",
+      "original_elapsed_s": 1570.0,
+      "released_elapsed_s": 2994.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T110721Z",
+      "original_elapsed_s": 1581.0,
+      "released_elapsed_s": 2994.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T110730Z",
+      "original_elapsed_s": 1590.0,
+      "released_elapsed_s": 2994.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T110741Z",
+      "original_elapsed_s": 1601.0,
+      "released_elapsed_s": 2994.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T110750Z",
+      "original_elapsed_s": 1610.0,
+      "released_elapsed_s": 2994.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T110801Z",
+      "original_elapsed_s": 1621.0,
+      "released_elapsed_s": 2994.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T110810Z",
+      "original_elapsed_s": 1630.0,
+      "released_elapsed_s": 2994.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T110821Z",
+      "original_elapsed_s": 1641.0,
+      "released_elapsed_s": 2994.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T110831Z",
+      "original_elapsed_s": 1651.0,
+      "released_elapsed_s": 2994.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T110840Z",
+      "original_elapsed_s": 1660.0,
+      "released_elapsed_s": 2994.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T110851Z",
+      "original_elapsed_s": 1671.0,
+      "released_elapsed_s": 2994.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T110900Z",
+      "original_elapsed_s": 1680.0,
+      "released_elapsed_s": 2994.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T110911Z",
+      "original_elapsed_s": 1691.0,
+      "released_elapsed_s": 2994.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T110920Z",
+      "original_elapsed_s": 1700.0,
+      "released_elapsed_s": 2994.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T110931Z",
+      "original_elapsed_s": 1711.0,
+      "released_elapsed_s": 2994.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T110940Z",
+      "original_elapsed_s": 1720.0,
+      "released_elapsed_s": 2994.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T110951Z",
+      "original_elapsed_s": 1731.0,
+      "released_elapsed_s": 2994.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T111000Z",
+      "original_elapsed_s": 1740.0,
+      "released_elapsed_s": 2994.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T111011Z",
+      "original_elapsed_s": 1751.0,
+      "released_elapsed_s": 2994.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T111020Z",
+      "original_elapsed_s": 1760.0,
+      "released_elapsed_s": 2994.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T111031Z",
+      "original_elapsed_s": 1771.0,
+      "released_elapsed_s": 2994.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T111041Z",
+      "original_elapsed_s": 1781.0,
+      "released_elapsed_s": 2994.0
+    },
+    {
+      "sensor_id": "ULT1-b12",
+      "event_id": "ULT1-b12@20201219T111051Z",
+      "original_elapsed_s": 1791.0,
+      "released_elapsed_s": 2994.0
+    }
+  ],
+  "partitions": {
+    "2": 1840,
+    "3": 1464,
+    "0": 1841,
+    "1": 2228
+  },
+  "delivered": 7373,
+  "delivery_errors": 0,
+  "undelivered": 0
+}

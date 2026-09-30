@@ -1,0 +1,622 @@
+# make smoke desde PowerShell (make de Windows, sin sh), 2026-09-25 (asercion exacta, dedup distinguible en cualquier alineacion, topicos borrados al terminar)
+docker compose --profile smoke up --build --abort-on-container-exit --exit-code-from smoke smoke || (docker compose --profile smoke down && exit 1)
+ Image coldchain-streaming-dataset-init Building 
+ Image coldchain-streaming-taskmanager Building 
+ Image coldchain-streaming-smoke Building 
+ Image coldchain-streaming-jobmanager Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 2.72kB 0.0s done
+#1 DONE 0.0s
+
+#2 [smoke internal] load build definition from Dockerfile
+#2 DONE 0.0s
+
+#3 [jobmanager internal] load build definition from Dockerfile
+#3 transferring dockerfile: 625B done
+#3 DONE 0.0s
+
+#2 [dataset-init internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.21kB done
+#2 DONE 0.0s
+
+#4 [dataset-init] resolve image config for docker-image://docker.io/docker/dockerfile:1
+#4 ...
+
+#5 [taskmanager internal] load metadata for docker.io/library/flink:1.19.3-java17
+#5 DONE 1.5s
+
+#6 [jobmanager internal] load metadata for docker.io/apache/beam_java17_sdk:2.74.0
+#6 ...
+
+#4 [dataset-init] resolve image config for docker-image://docker.io/docker/dockerfile:1
+#4 DONE 1.8s
+
+#7 [dataset-init] docker-image://docker.io/docker/dockerfile:1@sha256:ecfaec9ed6d810b56388c508f4121597bfbba70d41a6dfeee4d8cad5f295fc32
+#7 resolve docker.io/docker/dockerfile:1@sha256:ecfaec9ed6d810b56388c508f4121597bfbba70d41a6dfeee4d8cad5f295fc32 0.0s done
+#7 CACHED
+
+#8 [dataset-init internal] load metadata for ghcr.io/astral-sh/uv:python3.12-bookworm-slim
+#8 ...
+
+#9 [taskmanager internal] load metadata for docker.io/apache/beam_python3.12_sdk:2.74.0
+#9 DONE 3.1s
+
+#6 [taskmanager internal] load metadata for docker.io/apache/beam_java17_sdk:2.74.0
+#6 DONE 3.1s
+
+#10 [taskmanager internal] load .dockerignore
+#10 transferring context: 144B done
+#10 DONE 0.0s
+
+#11 [taskmanager beam-java 1/1] FROM docker.io/apache/beam_java17_sdk:2.74.0@sha256:1a95772ec6eb248b29cba92acc368949402e07128ab49b150a6c20500ff1f293
+#11 resolve docker.io/apache/beam_java17_sdk:2.74.0@sha256:1a95772ec6eb248b29cba92acc368949402e07128ab49b150a6c20500ff1f293 0.0s done
+#11 DONE 0.0s
+
+#12 [jobmanager stage-2 1/6] FROM docker.io/library/flink:1.19.3-java17@sha256:5d55cb672e95515a671058fb6806455c1f748bb566da694a57564cdbb05b2733
+#12 resolve docker.io/library/flink:1.19.3-java17@sha256:5d55cb672e95515a671058fb6806455c1f748bb566da694a57564cdbb05b2733 0.0s done
+#12 DONE 0.0s
+
+#13 [taskmanager beam-python 1/1] FROM docker.io/apache/beam_python3.12_sdk:2.74.0@sha256:85370b036dccfe851891f5a86d6b32fbb9a7930a1673714a67ad4a5a805cf362
+#13 resolve docker.io/apache/beam_python3.12_sdk:2.74.0@sha256:85370b036dccfe851891f5a86d6b32fbb9a7930a1673714a67ad4a5a805cf362 0.0s done
+#13 DONE 0.0s
+
+#14 [taskmanager internal] load build context
+#14 transferring context: 42.76kB 0.0s done
+#14 DONE 0.0s
+
+#15 [taskmanager stage-2 2/6] COPY --from=beam-java /opt/apache/beam /opt/apache/beam
+#15 CACHED
+
+#16 [taskmanager stage-2 3/6] COPY --from=beam-python /usr/local /usr/local
+#16 CACHED
+
+#17 [taskmanager stage-2 4/6] COPY --from=beam-python /opt/apache/beam /opt/coldchain-lab/python-sdk
+#17 CACHED
+
+#18 [taskmanager stage-2 5/6] COPY src /opt/coldchain-lab/src
+#18 DONE 0.0s
+
+#19 [jobmanager stage-2 6/6] RUN chmod 755 /opt/apache/beam/boot /opt/coldchain-lab/python-sdk/boot
+#19 DONE 0.2s
+
+#8 [dataset-init internal] load metadata for ghcr.io/astral-sh/uv:python3.12-bookworm-slim
+#8 ...
+
+#19 [taskmanager stage-2 6/6] RUN chmod 755 /opt/apache/beam/boot /opt/coldchain-lab/python-sdk/boot
+#19 DONE 0.2s
+
+#20 [taskmanager] exporting to image
+#20 exporting layers 0.0s done
+#20 exporting manifest sha256:e7c451605d3a23f96fc56d0022b3080ccec97fe53d69949295e6b6a6c34e5d66 done
+#20 exporting config sha256:c82631904d878ad69ea49255250a9301d89c4e8cd0840da9ac59d79808683008 0.0s done
+#20 exporting attestation manifest sha256:117cb6098c0733df9923c52f402769d0aa103919a7e53c870481ddae2b6879b6 0.0s done
+#20 exporting manifest list sha256:5a16206863f330950d9e33b0d1f6425c0cf50fceb9da405ec4f642997a8f9a12 0.0s done
+#20 naming to docker.io/library/coldchain-streaming-taskmanager:latest done
+#20 unpacking to docker.io/library/coldchain-streaming-taskmanager:latest 0.0s done
+#20 DONE 0.2s
+
+#21 [jobmanager] exporting to image
+#21 exporting layers 0.1s done
+#21 exporting manifest sha256:d2b32c2a1f31a8ab8cd7ced2fdb8633d11c3b2e84746e09fbc442b9cc55c9b67 0.0s done
+#21 exporting config sha256:0736ca0d02367019fd05074c0a451a6679bf93b44297fcf75ffaac0eaafe74ef 0.0s done
+#21 exporting attestation manifest sha256:4a4bcfb9581f1201b0c3d66ae1e6fb5fd6f295474e84e70cbb36acd03f451752 0.0s done
+#21 exporting manifest list sha256:a689e9fc649a21cda373e9ea6a587dc056bc99e75387ce8ffc8a4d450f8bc7d7 done
+#21 naming to docker.io/library/coldchain-streaming-jobmanager:latest done
+#21 unpacking to docker.io/library/coldchain-streaming-jobmanager:latest 0.0s done
+#21 DONE 0.2s
+
+#22 [taskmanager] resolving provenance for metadata file
+#22 DONE 0.0s
+
+#23 [jobmanager] resolving provenance for metadata file
+#23 DONE 0.0s
+
+#8 [dataset-init internal] load metadata for ghcr.io/astral-sh/uv:python3.12-bookworm-slim
+#8 DONE 1.9s
+
+#10 [dataset-init internal] load .dockerignore
+#10 CACHED
+
+#24 [smoke  1/10] FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim@sha256:e5b65587bce7de595f299855d7385fe7fca39b8a74baa261ba1b7147afa78e58
+#24 resolve ghcr.io/astral-sh/uv:python3.12-bookworm-slim@sha256:e5b65587bce7de595f299855d7385fe7fca39b8a74baa261ba1b7147afa78e58 0.0s done
+#24 DONE 0.0s
+
+#25 [smoke internal] load build context
+#25 transferring context: 162.94kB 0.0s done
+#25 DONE 0.0s
+
+#26 [dataset-init  2/10] RUN apt-get update     && apt-get install --yes --no-install-recommends openjdk-17-jre-headless curl     && rm -rf /var/lib/apt/lists/*
+#26 CACHED
+
+#27 [dataset-init  4/10] COPY pyproject.toml uv.lock README.md ./
+#27 CACHED
+
+#28 [dataset-init  3/10] WORKDIR /app
+#28 CACHED
+
+#29 [smoke  5/10] RUN uv sync --frozen --no-dev --no-install-project
+#29 CACHED
+
+#30 [smoke  6/10] COPY src ./src
+#30 DONE 0.0s
+
+#31 [dataset-init  7/10] COPY scripts ./scripts
+#31 DONE 0.0s
+
+#32 [dataset-init  8/10] RUN uv sync --frozen --no-dev
+#32 0.365    Building coldchain-streaming @ file:///app
+#32 1.584       Built coldchain-streaming @ file:///app
+#32 1.586 Prepared 1 package in 1.22s
+#32 1.587 Installed 1 package in 1ms
+#32 2.158 Bytecode compiled 5863 files in 571ms
+#32 2.158  + coldchain-streaming==0.1.0 (from file:///app)
+#32 DONE 2.2s
+
+#33 [dataset-init  9/10] RUN /app/.venv/bin/python -c "from apache_beam.io.kafka import default_io_expansion_service; service=default_io_expansion_service(); address=service.__enter__(); print(address); service.__exit__(None, None, None)"
+#33 1.416    WARNING: Apache Beam is downloading dependencies from a public repository at runtime.
+#33 1.416    This may pose security risks or cause instability due to repository availability.
+#33 1.416    URL: https://repo.maven.apache.org/maven2/org/apache/beam/beam-sdks-java-io-expansion-service/2.74.0/beam-sdks-java-io-expansion-service-2.74.0.jar
+#33 1.416    Destination: /app/.apache_beam/cache/jars/beam-sdks-java-io-expansion-service-2.74.0.jar
+#33 1.416    Consider pre-staging dependencies or using a private repository mirror.
+#33 1.416    For more information, see: https://beam.apache.org/documentation/sdks/python-dependencies/
+#33 36.42 <apache_beam.transforms.external.ExpansionAndArtifactRetrievalStub object at 0x74f93735a060>
+#33 DONE 37.7s
+
+#33 [smoke  9/10] RUN /app/.venv/bin/python -c "from apache_beam.io.kafka import default_io_expansion_service; service=default_io_expansion_service(); address=service.__enter__(); print(address); service.__exit__(None, None, None)"
+#33 DONE 37.7s
+
+#34 [smoke 10/10] RUN useradd --create-home --uid 10001 coldchain     && mkdir -p /app/data/cache /app/data/processed /app/data/out     && chown -R coldchain:coldchain /app
+#34 DONE 29.9s
+
+#34 [smoke 10/10] RUN useradd --create-home --uid 10001 coldchain     && mkdir -p /app/data/cache /app/data/processed /app/data/out     && chown -R coldchain:coldchain /app
+#34 DONE 29.9s
+
+#35 [smoke] exporting to image
+#35 exporting layers
+#35 ...
+
+#36 [dataset-init] exporting to image
+#36 ...
+
+#35 [smoke] exporting to image
+#35 exporting layers 25.1s done
+#35 exporting manifest sha256:8932f5a64615f78380c31214bedffd52d67c5c70f3ae619c6cbc5100d2fac75c 0.0s done
+#35 exporting config sha256:9ef3509b8b1fb4c412182e1210143a36324ed5e8ca47b8b931dea7d5f3f10edf done
+#35 exporting attestation manifest sha256:acc6113ad6cb8c29637116405354d10b117754f099ed72f666a3d11d80bb4bf5 0.0s done
+#35 exporting manifest list sha256:61193ad17eaf80c3d1361a9d08f28812c973cb3f9b438fe9b40879572b48a06a 0.0s done
+#35 naming to docker.io/library/coldchain-streaming-smoke:latest done
+#35 unpacking to docker.io/library/coldchain-streaming-smoke:latest
+#35 unpacking to docker.io/library/coldchain-streaming-smoke:latest 7.9s done
+#35 DONE 33.1s
+
+#36 [dataset-init] exporting to image
+#36 exporting layers 25.1s done
+#36 exporting manifest sha256:998b783b7cae603826533f2db206bbd2f310b8d8e59b4d05854f37c58cf4305b done
+#36 exporting config sha256:77048cde0966fdd1c8e05e3cdac676bb1166c88e426a1e762c15e6d5a9c60c8a done
+#36 exporting attestation manifest sha256:27328dfc768e7ddcc191b5fa7a1ba4216afe31276a399a7749e23978c0c5bfbb 0.0s done
+#36 exporting manifest list sha256:7d26f12cb6dc26973af028215a2b893f1400938511e2efce70756f5e0887bbe4 done
+#36 naming to docker.io/library/coldchain-streaming-dataset-init:latest done
+#36 unpacking to docker.io/library/coldchain-streaming-dataset-init:latest 7.9s done
+#36 DONE 33.1s
+
+#37 [smoke] resolving provenance for metadata file
+#37 DONE 0.0s
+
+#38 [dataset-init] resolving provenance for metadata file
+#38 DONE 0.0s
+ Image coldchain-streaming-smoke Built 
+ Image coldchain-streaming-jobmanager Built 
+ Image coldchain-streaming-taskmanager Built 
+ Image coldchain-streaming-dataset-init Built 
+ Network coldchain-streaming_default Creating 
+ Network coldchain-streaming_default Creating 
+ Network coldchain-streaming_default Created 
+ Network coldchain-streaming_default Created 
+ Container coldchain-streaming-dataset-init-1 Creating 
+ Container coldchain-streaming-kafka-1 Creating 
+ Container coldchain-streaming-jobmanager-1 Creating 
+ Container coldchain-streaming-jobmanager-1 Created 
+ Container coldchain-streaming-taskmanager-1 Creating 
+ Container coldchain-streaming-taskmanager-2 Creating 
+ Container coldchain-streaming-dataset-init-1 Created 
+ Container coldchain-streaming-kafka-1 Created 
+ Container coldchain-streaming-taskmanager-2 Created 
+ Container coldchain-streaming-beam-job-server-1 Creating 
+ Container coldchain-streaming-taskmanager-1 Created 
+ Container coldchain-streaming-beam-job-server-1 Created 
+ Container coldchain-streaming-smoke-1 Creating 
+ Container coldchain-streaming-smoke-1 Created 
+Attaching to smoke-1
+ Container coldchain-streaming-jobmanager-1 Starting 
+ Container coldchain-streaming-dataset-init-1 Starting 
+ Container coldchain-streaming-kafka-1 Starting 
+ Container coldchain-streaming-jobmanager-1 Started 
+ Container coldchain-streaming-taskmanager-2 Starting 
+ Container coldchain-streaming-dataset-init-1 Started 
+ Container coldchain-streaming-kafka-1 Started 
+ Container coldchain-streaming-taskmanager-2 Started 
+ Container coldchain-streaming-taskmanager-1 Starting 
+ Container coldchain-streaming-taskmanager-1 Started 
+ Container coldchain-streaming-beam-job-server-1 Starting 
+ Container coldchain-streaming-beam-job-server-1 Started 
+ Container coldchain-streaming-dataset-init-1 Waiting 
+ Container coldchain-streaming-kafka-1 Waiting 
+ Container coldchain-streaming-dataset-init-1 Exited 
+ Container coldchain-streaming-kafka-1 Healthy 
+ Container coldchain-streaming-smoke-1 Starting 
+ Container coldchain-streaming-smoke-1 Started 
+smoke-1  | 2026-09-25 17:55:42,054 INFO duplicado sensor=ULT1-b10 event_id=ULT1-b10@20201219T092600Z
+smoke-1  | 2026-09-25 17:55:42,054 INFO duplicado sensor=ULT1-b19 event_id=ULT1-b19@20201219T092600Z
+smoke-1  | 2026-09-25 17:55:42,055 INFO duplicado sensor=ULT1-b20 event_id=ULT1-b20@20201219T092611Z
+smoke-1  | 2026-09-25 17:55:42,055 INFO duplicado sensor=ULT1-b18 event_id=ULT1-b18@20201219T092620Z
+smoke-1  | 2026-09-25 17:55:42,055 INFO duplicado sensor=ULT1-b02 event_id=ULT1-b02@20201219T092631Z
+smoke-1  | 2026-09-25 17:55:42,056 INFO invalido inyectado sensor=ULT1-b07 event_id=ULT1-b07@20201219T092650Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,056 INFO duplicado sensor=ULT1-b03 event_id=ULT1-b03@20201219T092650Z
+smoke-1  | 2026-09-25 17:55:42,056 INFO invalido inyectado sensor=ULT1-b10 event_id=ULT1-b10@20201219T092701Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,057 INFO duplicado sensor=ULT1-b15 event_id=ULT1-b15@20201219T092710Z
+smoke-1  | 2026-09-25 17:55:42,057 INFO duplicado sensor=ULT1-b18 event_id=ULT1-b18@20201219T092721Z
+smoke-1  | 2026-09-25 17:55:42,057 INFO duplicado sensor=ULT1-b12 event_id=ULT1-b12@20201219T092730Z
+smoke-1  | 2026-09-25 17:55:42,057 INFO duplicado sensor=ULT1-b06 event_id=ULT1-b06@20201219T092741Z
+smoke-1  | 2026-09-25 17:55:42,057 INFO duplicado sensor=ULT1-b12 event_id=ULT1-b12@20201219T092741Z
+smoke-1  | 2026-09-25 17:55:42,058 INFO invalido inyectado sensor=ULT1-b06 event_id=ULT1-b06@20201219T092750Z motivo=temp_c_text
+smoke-1  | 2026-09-25 17:55:42,058 INFO duplicado sensor=ULT1-b08 event_id=ULT1-b08@20201219T092750Z
+smoke-1  | 2026-09-25 17:55:42,058 INFO duplicado sensor=ULT1-b15 event_id=ULT1-b15@20201219T092750Z
+smoke-1  | 2026-09-25 17:55:42,058 INFO duplicado sensor=ULT1-b18 event_id=ULT1-b18@20201219T092750Z
+smoke-1  | 2026-09-25 17:55:42,058 INFO invalido inyectado sensor=ULT1-b11 event_id=ULT1-b11@20201219T092801Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,058 INFO invalido inyectado sensor=ULT1-b13 event_id=ULT1-b13@20201219T092801Z motivo=temp_c_text
+smoke-1  | 2026-09-25 17:55:42,058 INFO duplicado sensor=ULT1-b01 event_id=ULT1-b01@20201219T092801Z
+smoke-1  | 2026-09-25 17:55:42,058 INFO duplicado sensor=ULT1-b12 event_id=ULT1-b12@20201219T092801Z
+smoke-1  | 2026-09-25 17:55:42,059 INFO duplicado sensor=ULT1-b03 event_id=ULT1-b03@20201219T092821Z
+smoke-1  | 2026-09-25 17:55:42,059 INFO invalido inyectado sensor=ULT1-b15 event_id=ULT1-b15@20201219T092830Z motivo=temp_c_text
+smoke-1  | 2026-09-25 17:55:42,059 INFO invalido inyectado sensor=ULT1-b17 event_id=ULT1-b17@20201219T092830Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,059 INFO duplicado sensor=ULT1-b12 event_id=ULT1-b12@20201219T092830Z
+smoke-1  | 2026-09-25 17:55:42,060 INFO duplicado sensor=ULT1-b05 event_id=ULT1-b05@20201219T092850Z
+smoke-1  | 2026-09-25 17:55:42,060 INFO duplicado sensor=ULT1-b12 event_id=ULT1-b12@20201219T092850Z
+smoke-1  | 2026-09-25 17:55:42,060 INFO invalido inyectado sensor=ULT1-b09 event_id=ULT1-b09@20201219T092901Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,060 INFO invalido inyectado sensor=ULT1-b10 event_id=ULT1-b10@20201219T092901Z motivo=temp_c_text
+smoke-1  | 2026-09-25 17:55:42,061 INFO duplicado sensor=ULT1-b06 event_id=ULT1-b06@20201219T092911Z
+smoke-1  | 2026-09-25 17:55:42,061 INFO duplicado sensor=ULT1-b15 event_id=ULT1-b15@20201219T092911Z
+smoke-1  | 2026-09-25 17:55:42,061 INFO invalido inyectado sensor=ULT1-b14 event_id=ULT1-b14@20201219T092921Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,061 INFO invalido inyectado sensor=ULT1-b19 event_id=ULT1-b19@20201219T092921Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,061 INFO duplicado sensor=ULT1-b08 event_id=ULT1-b08@20201219T092921Z
+smoke-1  | 2026-09-25 17:55:42,062 INFO invalido inyectado sensor=ULT1-b05 event_id=ULT1-b05@20201219T092951Z motivo=temp_c_text
+smoke-1  | 2026-09-25 17:55:42,062 INFO duplicado sensor=ULT1-b08 event_id=ULT1-b08@20201219T092951Z
+smoke-1  | 2026-09-25 17:55:42,062 INFO duplicado sensor=ULT1-b11 event_id=ULT1-b11@20201219T092951Z
+smoke-1  | 2026-09-25 17:55:42,062 INFO invalido inyectado sensor=ULT1-b12 event_id=ULT1-b12@20201219T093000Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,062 INFO duplicado sensor=ULT1-b04 event_id=ULT1-b04@20201219T093000Z
+smoke-1  | 2026-09-25 17:55:42,062 INFO duplicado sensor=ULT1-b08 event_id=ULT1-b08@20201219T093000Z
+smoke-1  | 2026-09-25 17:55:42,062 INFO duplicado sensor=ULT1-b13 event_id=ULT1-b13@20201219T093000Z
+smoke-1  | 2026-09-25 17:55:42,062 INFO invalido inyectado sensor=ULT1-b06 event_id=ULT1-b06@20201219T093011Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,063 INFO duplicado sensor=ULT1-b19 event_id=ULT1-b19@20201219T093011Z
+smoke-1  | 2026-09-25 17:55:42,063 INFO invalido inyectado sensor=ULT1-b07 event_id=ULT1-b07@20201219T093020Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,063 INFO invalido inyectado sensor=ULT1-b14 event_id=ULT1-b14@20201219T093020Z motivo=temp_c_text
+smoke-1  | 2026-09-25 17:55:42,063 INFO duplicado sensor=ULT1-b04 event_id=ULT1-b04@20201219T093020Z
+smoke-1  | 2026-09-25 17:55:42,063 INFO duplicado sensor=ULT1-b02 event_id=ULT1-b02@20201219T093031Z
+smoke-1  | 2026-09-25 17:55:42,063 INFO duplicado sensor=ULT1-b14 event_id=ULT1-b14@20201219T093031Z
+smoke-1  | 2026-09-25 17:55:42,064 INFO duplicado sensor=ULT1-b01 event_id=ULT1-b01@20201219T093040Z
+smoke-1  | 2026-09-25 17:55:42,064 INFO duplicado sensor=ULT1-b02 event_id=ULT1-b02@20201219T093100Z
+smoke-1  | 2026-09-25 17:55:42,064 INFO invalido inyectado sensor=ULT1-b10 event_id=ULT1-b10@20201219T093111Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,064 INFO invalido inyectado sensor=ULT1-b10 event_id=ULT1-b10@20201219T093111Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,064 INFO duplicado sensor=ULT1-b10 event_id=ULT1-b10@20201219T093111Z
+smoke-1  | 2026-09-25 17:55:42,065 INFO duplicado sensor=ULT1-b08 event_id=ULT1-b08@20201219T093120Z
+smoke-1  | 2026-09-25 17:55:42,065 INFO invalido inyectado sensor=ULT1-b03 event_id=ULT1-b03@20201219T093131Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,065 INFO duplicado sensor=ULT1-b13 event_id=ULT1-b13@20201219T093131Z
+smoke-1  | 2026-09-25 17:55:42,065 INFO duplicado sensor=ULT1-b08 event_id=ULT1-b08@20201219T093140Z
+smoke-1  | 2026-09-25 17:55:42,065 INFO duplicado sensor=ULT1-b15 event_id=ULT1-b15@20201219T093151Z
+smoke-1  | 2026-09-25 17:55:42,066 INFO invalido inyectado sensor=ULT1-b08 event_id=ULT1-b08@20201219T093201Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,066 INFO invalido inyectado sensor=ULT1-b04 event_id=ULT1-b04@20201219T093221Z motivo=temp_c_text
+smoke-1  | 2026-09-25 17:55:42,066 INFO duplicado sensor=ULT1-b02 event_id=ULT1-b02@20201219T093221Z
+smoke-1  | 2026-09-25 17:55:42,066 INFO duplicado sensor=ULT1-b11 event_id=ULT1-b11@20201219T093230Z
+smoke-1  | 2026-09-25 17:55:42,067 INFO duplicado sensor=ULT1-b06 event_id=ULT1-b06@20201219T093241Z
+smoke-1  | 2026-09-25 17:55:42,067 INFO duplicado sensor=ULT1-b20 event_id=ULT1-b20@20201219T093250Z
+smoke-1  | 2026-09-25 17:55:42,067 INFO invalido inyectado sensor=ULT1-b01 event_id=ULT1-b01@20201219T093310Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,067 INFO invalido inyectado sensor=ULT1-b01 event_id=ULT1-b01@20201219T093310Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,067 INFO duplicado sensor=ULT1-b01 event_id=ULT1-b01@20201219T093310Z
+smoke-1  | 2026-09-25 17:55:42,068 INFO invalido inyectado sensor=ULT1-b10 event_id=ULT1-b10@20201219T093321Z motivo=temp_c_text
+smoke-1  | 2026-09-25 17:55:42,068 INFO invalido inyectado sensor=ULT1-b17 event_id=ULT1-b17@20201219T093321Z motivo=temp_c_text
+smoke-1  | 2026-09-25 17:55:42,068 INFO invalido inyectado sensor=ULT1-b17 event_id=ULT1-b17@20201219T093321Z motivo=temp_c_text
+smoke-1  | 2026-09-25 17:55:42,068 INFO duplicado sensor=ULT1-b17 event_id=ULT1-b17@20201219T093321Z
+smoke-1  | 2026-09-25 17:55:42,068 INFO duplicado sensor=ULT1-b02 event_id=ULT1-b02@20201219T093341Z
+smoke-1  | 2026-09-25 17:55:42,068 INFO duplicado sensor=ULT1-b10 event_id=ULT1-b10@20201219T093341Z
+smoke-1  | 2026-09-25 17:55:42,069 INFO duplicado sensor=ULT1-b07 event_id=ULT1-b07@20201219T093421Z
+smoke-1  | 2026-09-25 17:55:42,069 INFO duplicado sensor=ULT1-b09 event_id=ULT1-b09@20201219T093421Z
+smoke-1  | 2026-09-25 17:55:42,069 INFO duplicado sensor=ULT1-b09 event_id=ULT1-b09@20201219T093431Z
+smoke-1  | 2026-09-25 17:55:42,069 INFO invalido inyectado sensor=ULT1-b03 event_id=ULT1-b03@20201219T093440Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,070 INFO invalido inyectado sensor=ULT1-b13 event_id=ULT1-b13@20201219T093440Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,070 INFO duplicado sensor=ULT1-b08 event_id=ULT1-b08@20201219T093440Z
+smoke-1  | 2026-09-25 17:55:42,070 INFO invalido inyectado sensor=ULT1-b12 event_id=ULT1-b12@20201219T093451Z motivo=temp_c_text
+smoke-1  | 2026-09-25 17:55:42,070 INFO invalido inyectado sensor=ULT1-b07 event_id=ULT1-b07@20201219T093500Z motivo=temp_c_text
+smoke-1  | 2026-09-25 17:55:42,070 INFO duplicado sensor=ULT1-b06 event_id=ULT1-b06@20201219T093500Z
+smoke-1  | 2026-09-25 17:55:42,070 INFO duplicado sensor=ULT1-b14 event_id=ULT1-b14@20201219T093500Z
+smoke-1  | 2026-09-25 17:55:42,070 INFO invalido inyectado sensor=ULT1-b02 event_id=ULT1-b02@20201219T093511Z motivo=temp_c_text
+smoke-1  | 2026-09-25 17:55:42,071 INFO invalido inyectado sensor=ULT1-b06 event_id=ULT1-b06@20201219T093520Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,071 INFO duplicado sensor=ULT1-b02 event_id=ULT1-b02@20201219T093540Z
+smoke-1  | 2026-09-25 17:55:42,072 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T093100Z original_elapsed_s=300 liberado_elapsed_s=594
+smoke-1  | 2026-09-25 17:55:42,072 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T093111Z original_elapsed_s=311 liberado_elapsed_s=594
+smoke-1  | 2026-09-25 17:55:42,072 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T093120Z original_elapsed_s=320 liberado_elapsed_s=594
+smoke-1  | 2026-09-25 17:55:42,072 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T093131Z original_elapsed_s=331 liberado_elapsed_s=594
+smoke-1  | 2026-09-25 17:55:42,072 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T093140Z original_elapsed_s=340 liberado_elapsed_s=594
+smoke-1  | 2026-09-25 17:55:42,072 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T093151Z original_elapsed_s=351 liberado_elapsed_s=594
+smoke-1  | 2026-09-25 17:55:42,072 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T093201Z original_elapsed_s=361 liberado_elapsed_s=594
+smoke-1  | 2026-09-25 17:55:42,072 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T093210Z original_elapsed_s=370 liberado_elapsed_s=594
+smoke-1  | 2026-09-25 17:55:42,072 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T093221Z original_elapsed_s=381 liberado_elapsed_s=594
+smoke-1  | 2026-09-25 17:55:42,072 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T093230Z original_elapsed_s=390 liberado_elapsed_s=594
+smoke-1  | 2026-09-25 17:55:42,072 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T093241Z original_elapsed_s=401 liberado_elapsed_s=594
+smoke-1  | 2026-09-25 17:55:42,072 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T093250Z original_elapsed_s=410 liberado_elapsed_s=594
+smoke-1  | 2026-09-25 17:55:42,072 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T093301Z original_elapsed_s=421 liberado_elapsed_s=594
+smoke-1  | 2026-09-25 17:55:42,072 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T093310Z original_elapsed_s=430 liberado_elapsed_s=594
+smoke-1  | 2026-09-25 17:55:42,072 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T093321Z original_elapsed_s=441 liberado_elapsed_s=594
+smoke-1  | 2026-09-25 17:55:42,072 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T093330Z original_elapsed_s=450 liberado_elapsed_s=594
+smoke-1  | 2026-09-25 17:55:42,072 INFO duplicado sensor=ULT1-b07 event_id=ULT1-b07@20201219T093330Z
+smoke-1  | 2026-09-25 17:55:42,072 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T093341Z original_elapsed_s=461 liberado_elapsed_s=594
+smoke-1  | 2026-09-25 17:55:42,072 INFO retenido y liberado sensor=ULT1-b07 event_id=ULT1-b07@20201219T093350Z original_elapsed_s=470 liberado_elapsed_s=594
+smoke-1  | 2026-09-25 17:55:42,073 INFO invalido inyectado sensor=ULT1-b12 event_id=ULT1-b12@20201219T093600Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,073 INFO invalido inyectado sensor=ULT1-b15 event_id=ULT1-b15@20201219T093600Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,073 INFO duplicado sensor=ULT1-b19 event_id=ULT1-b19@20201219T093611Z
+smoke-1  | 2026-09-25 17:55:42,074 INFO duplicado sensor=ULT1-b07 event_id=ULT1-b07@20201219T093620Z
+smoke-1  | 2026-09-25 17:55:42,074 INFO duplicado sensor=ULT1-b01 event_id=ULT1-b01@20201219T093631Z
+smoke-1  | 2026-09-25 17:55:42,074 INFO duplicado sensor=ULT1-b03 event_id=ULT1-b03@20201219T093631Z
+smoke-1  | 2026-09-25 17:55:42,074 INFO duplicado sensor=ULT1-b09 event_id=ULT1-b09@20201219T093651Z
+smoke-1  | 2026-09-25 17:55:42,074 INFO duplicado sensor=ULT1-b19 event_id=ULT1-b19@20201219T093651Z
+smoke-1  | 2026-09-25 17:55:42,075 INFO duplicado sensor=ULT1-b01 event_id=ULT1-b01@20201219T093710Z
+smoke-1  | 2026-09-25 17:55:42,075 INFO duplicado sensor=ULT1-b12 event_id=ULT1-b12@20201219T093710Z
+smoke-1  | 2026-09-25 17:55:42,075 INFO duplicado sensor=ULT1-b16 event_id=ULT1-b16@20201219T093710Z
+smoke-1  | 2026-09-25 17:55:42,075 INFO duplicado sensor=ULT1-b20 event_id=ULT1-b20@20201219T093710Z
+smoke-1  | 2026-09-25 17:55:42,075 INFO invalido inyectado sensor=ULT1-b06 event_id=ULT1-b06@20201219T093721Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,076 INFO invalido inyectado sensor=ULT1-b03 event_id=ULT1-b03@20201219T093741Z motivo=temp_c_text
+smoke-1  | 2026-09-25 17:55:42,076 INFO duplicado sensor=ULT1-b05 event_id=ULT1-b05@20201219T093741Z
+smoke-1  | 2026-09-25 17:55:42,076 INFO duplicado sensor=ULT1-b09 event_id=ULT1-b09@20201219T093741Z
+smoke-1  | 2026-09-25 17:55:42,076 INFO duplicado sensor=ULT1-b10 event_id=ULT1-b10@20201219T093741Z
+smoke-1  | 2026-09-25 17:55:42,076 INFO duplicado sensor=ULT1-b20 event_id=ULT1-b20@20201219T093741Z
+smoke-1  | 2026-09-25 17:55:42,076 INFO invalido inyectado sensor=ULT1-b01 event_id=ULT1-b01@20201219T093750Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,076 INFO duplicado sensor=ULT1-b13 event_id=ULT1-b13@20201219T093750Z
+smoke-1  | 2026-09-25 17:55:42,076 INFO reenvio en rafaga sensor=ULT1-b03 event_id=ULT1-b03@20201219T093710Z emit_elapsed_s=714
+smoke-1  | 2026-09-25 17:55:42,076 INFO reenvio en rafaga sensor=ULT1-b03 event_id=ULT1-b03@20201219T093721Z emit_elapsed_s=714
+smoke-1  | 2026-09-25 17:55:42,076 INFO reenvio en rafaga sensor=ULT1-b03 event_id=ULT1-b03@20201219T093730Z emit_elapsed_s=714
+smoke-1  | 2026-09-25 17:55:42,076 INFO invalido inyectado sensor=ULT1-b03 event_id=ULT1-b03@20201219T093741Z motivo=temp_c_text
+smoke-1  | 2026-09-25 17:55:42,076 INFO reenvio en rafaga sensor=ULT1-b03 event_id=ULT1-b03@20201219T093741Z emit_elapsed_s=714
+smoke-1  | 2026-09-25 17:55:42,076 INFO reenvio en rafaga sensor=ULT1-b03 event_id=ULT1-b03@20201219T093750Z emit_elapsed_s=714
+smoke-1  | 2026-09-25 17:55:42,076 INFO invalido inyectado sensor=ULT1-b19 event_id=ULT1-b19@20201219T093801Z motivo=temp_c_text
+smoke-1  | 2026-09-25 17:55:42,077 INFO duplicado sensor=ULT1-b06 event_id=ULT1-b06@20201219T093801Z
+smoke-1  | 2026-09-25 17:55:42,077 INFO duplicado sensor=ULT1-b08 event_id=ULT1-b08@20201219T093801Z
+smoke-1  | 2026-09-25 17:55:42,077 INFO duplicado sensor=ULT1-b12 event_id=ULT1-b12@20201219T093810Z
+smoke-1  | 2026-09-25 17:55:42,077 INFO duplicado sensor=ULT1-b08 event_id=ULT1-b08@20201219T093821Z
+smoke-1  | 2026-09-25 17:55:42,077 INFO invalido inyectado sensor=ULT1-b14 event_id=ULT1-b14@20201219T093830Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,077 INFO duplicado sensor=ULT1-b13 event_id=ULT1-b13@20201219T093830Z
+smoke-1  | 2026-09-25 17:55:42,078 INFO invalido inyectado sensor=ULT1-b15 event_id=ULT1-b15@20201219T093850Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,078 INFO duplicado sensor=ULT1-b03 event_id=ULT1-b03@20201219T093850Z
+smoke-1  | 2026-09-25 17:55:42,078 INFO invalido inyectado sensor=ULT1-b15 event_id=ULT1-b15@20201219T093850Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,078 INFO duplicado sensor=ULT1-b15 event_id=ULT1-b15@20201219T093850Z
+smoke-1  | 2026-09-25 17:55:42,078 INFO invalido inyectado sensor=ULT1-b05 event_id=ULT1-b05@20201219T093901Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,078 INFO invalido inyectado sensor=ULT1-b12 event_id=ULT1-b12@20201219T093901Z motivo=temp_c_text
+smoke-1  | 2026-09-25 17:55:42,078 INFO duplicado sensor=ULT1-b08 event_id=ULT1-b08@20201219T093901Z
+smoke-1  | 2026-09-25 17:55:42,078 INFO invalido inyectado sensor=ULT1-b09 event_id=ULT1-b09@20201219T093910Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,078 INFO duplicado sensor=ULT1-b08 event_id=ULT1-b08@20201219T093910Z
+smoke-1  | 2026-09-25 17:55:42,078 INFO duplicado sensor=ULT1-b15 event_id=ULT1-b15@20201219T093910Z
+smoke-1  | 2026-09-25 17:55:42,079 INFO duplicado sensor=ULT1-b11 event_id=ULT1-b11@20201219T093921Z
+smoke-1  | 2026-09-25 17:55:42,079 INFO invalido inyectado sensor=ULT1-b13 event_id=ULT1-b13@20201219T093931Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,079 INFO duplicado sensor=ULT1-b20 event_id=ULT1-b20@20201219T093931Z
+smoke-1  | 2026-09-25 17:55:42,080 INFO duplicado sensor=ULT1-b06 event_id=ULT1-b06@20201219T094000Z
+smoke-1  | 2026-09-25 17:55:42,080 INFO duplicado sensor=ULT1-b09 event_id=ULT1-b09@20201219T094000Z
+smoke-1  | 2026-09-25 17:55:42,080 INFO duplicado sensor=ULT1-b10 event_id=ULT1-b10@20201219T094011Z
+smoke-1  | 2026-09-25 17:55:42,080 INFO duplicado sensor=ULT1-b19 event_id=ULT1-b19@20201219T094011Z
+smoke-1  | 2026-09-25 17:55:42,080 INFO duplicado sensor=ULT1-b19 event_id=ULT1-b19@20201219T094020Z
+smoke-1  | 2026-09-25 17:55:42,080 INFO duplicado sensor=ULT1-b03 event_id=ULT1-b03@20201219T094031Z
+smoke-1  | 2026-09-25 17:55:42,080 INFO invalido inyectado sensor=ULT1-b01 event_id=ULT1-b01@20201219T094040Z motivo=temp_c_text
+smoke-1  | 2026-09-25 17:55:42,081 INFO duplicado sensor=ULT1-b14 event_id=ULT1-b14@20201219T094040Z
+smoke-1  | 2026-09-25 17:55:42,081 INFO invalido inyectado sensor=ULT1-b18 event_id=ULT1-b18@20201219T094100Z motivo=temp_c_text
+smoke-1  | 2026-09-25 17:55:42,081 INFO duplicado sensor=ULT1-b09 event_id=ULT1-b09@20201219T094100Z
+smoke-1  | 2026-09-25 17:55:42,081 INFO invalido inyectado sensor=ULT1-b01 event_id=ULT1-b01@20201219T094111Z motivo=temp_c_text
+smoke-1  | 2026-09-25 17:55:42,081 INFO duplicado sensor=ULT1-b13 event_id=ULT1-b13@20201219T094111Z
+smoke-1  | 2026-09-25 17:55:42,082 INFO invalido inyectado sensor=ULT1-b14 event_id=ULT1-b14@20201219T094120Z motivo=temp_c_text
+smoke-1  | 2026-09-25 17:55:42,082 INFO duplicado sensor=ULT1-b06 event_id=ULT1-b06@20201219T094120Z
+smoke-1  | 2026-09-25 17:55:42,082 INFO invalido inyectado sensor=ULT1-b04 event_id=ULT1-b04@20201219T094131Z motivo=temp_c_text
+smoke-1  | 2026-09-25 17:55:42,082 INFO duplicado sensor=ULT1-b07 event_id=ULT1-b07@20201219T094131Z
+smoke-1  | 2026-09-25 17:55:42,082 INFO duplicado sensor=ULT1-b12 event_id=ULT1-b12@20201219T094131Z
+smoke-1  | 2026-09-25 17:55:42,082 INFO duplicado sensor=ULT1-b15 event_id=ULT1-b15@20201219T094131Z
+smoke-1  | 2026-09-25 17:55:42,082 INFO duplicado sensor=ULT1-b20 event_id=ULT1-b20@20201219T094131Z
+smoke-1  | 2026-09-25 17:55:42,082 INFO invalido inyectado sensor=ULT1-b13 event_id=ULT1-b13@20201219T094140Z motivo=temp_c_text
+smoke-1  | 2026-09-25 17:55:42,083 INFO duplicado sensor=ULT1-b13 event_id=ULT1-b13@20201219T094201Z
+smoke-1  | 2026-09-25 17:55:42,083 INFO duplicado sensor=ULT1-b18 event_id=ULT1-b18@20201219T094211Z
+smoke-1  | 2026-09-25 17:55:42,083 INFO invalido inyectado sensor=ULT1-b20 event_id=ULT1-b20@20201219T094230Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,083 INFO duplicado sensor=ULT1-b12 event_id=ULT1-b12@20201219T094230Z
+smoke-1  | 2026-09-25 17:55:42,084 INFO invalido inyectado sensor=ULT1-b18 event_id=ULT1-b18@20201219T094250Z motivo=temp_c_text
+smoke-1  | 2026-09-25 17:55:42,084 INFO duplicado sensor=ULT1-b17 event_id=ULT1-b17@20201219T094301Z
+smoke-1  | 2026-09-25 17:55:42,084 INFO invalido inyectado sensor=ULT1-b14 event_id=ULT1-b14@20201219T094310Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,085 INFO duplicado sensor=ULT1-b01 event_id=ULT1-b01@20201219T094330Z
+smoke-1  | 2026-09-25 17:55:42,085 INFO duplicado sensor=ULT1-b14 event_id=ULT1-b14@20201219T094330Z
+smoke-1  | 2026-09-25 17:55:42,085 INFO invalido inyectado sensor=ULT1-b13 event_id=ULT1-b13@20201219T094341Z motivo=remove_temp_c
+smoke-1  | 2026-09-25 17:55:42,085 INFO invalido inyectado sensor=ULT1-b17 event_id=ULT1-b17@20201219T094350Z motivo=temp_c_text
+smoke-1  | 2026-09-25 17:55:42,085 INFO duplicado sensor=ULT1-b09 event_id=ULT1-b09@20201219T094350Z
+smoke-1  | 2026-09-25 17:55:42,086 INFO duplicado sensor=ULT1-b10 event_id=ULT1-b10@20201219T094410Z
+smoke-1  | 2026-09-25 17:55:42,086 INFO duplicado sensor=ULT1-b09 event_id=ULT1-b09@20201219T094421Z
+smoke-1  | 2026-09-25 17:55:42,087 INFO duplicado sensor=ULT1-b16 event_id=ULT1-b16@20201219T094451Z
+smoke-1  | 2026-09-25 17:55:42,087 INFO invalido inyectado sensor=ULT1-b12 event_id=ULT1-b12@20201219T094511Z motivo=temp_c_text
+smoke-1  | 2026-09-25 17:55:42,087 INFO duplicado sensor=ULT1-b03 event_id=ULT1-b03@20201219T094511Z
+smoke-1  | 2026-09-25 17:55:42,087 INFO duplicado sensor=ULT1-b09 event_id=ULT1-b09@20201219T094520Z
+smoke-1  | 2026-09-25 17:55:42,088 INFO duplicado sensor=ULT1-b15 event_id=ULT1-b15@20201219T094531Z
+smoke-1  | 2026-09-25 17:55:42,088 INFO duplicado sensor=ULT1-b18 event_id=ULT1-b18@20201219T094531Z
+smoke-1  | 2026-09-25 17:55:42,088 INFO invalido inyectado sensor=ULT1-b19 event_id=ULT1-b19@20201219T094551Z motivo=temp_c_text
+smoke-1  | 2026-09-25 17:55:42,088 INFO duplicado sensor=ULT1-b04 event_id=ULT1-b04@20201219T094551Z
+smoke-1  | %4|1790358942.562|GETPID|coldchain-replay-producer#producer-2| [thrd:main]: Failed to acquire idempotence PID from broker kafka:9092/1: Broker: Coordinator load in progress: retrying
+smoke-1  | /app/.venv/bin/python: No module named pip
+smoke-1  | WARNING:apache_beam.runners.portability.stager:Couldn't stage a list of installed dependencies in submission environment. Got exception: Command '['/app/.venv/bin/python', '-m', 'pip', 'freeze']' returned non-zero exit status 1.
+smoke-1  | {"state": "DONE"}
+smoke-1  | {
+smoke-1  |   "produced": {
+smoke-1  |     "events": 2516,
+smoke-1  |     "by_kind": {
+smoke-1  |       "normal": 2400,
+smoke-1  |       "duplicate": 111,
+smoke-1  |       "invalid": 59,
+smoke-1  |       "burst_resend": 5
+smoke-1  |     },
+smoke-1  |     "invalid": 59,
+smoke-1  |     "duplicates": 111,
+smoke-1  |     "burst_resends": 5,
+smoke-1  |     "released_late": [
+smoke-1  |       {
+smoke-1  |         "sensor_id": "ULT1-b07",
+smoke-1  |         "event_id": "ULT1-b07@20201219T093100Z",
+smoke-1  |         "original_elapsed_s": 300.0,
+smoke-1  |         "released_elapsed_s": 594.0
+smoke-1  |       },
+smoke-1  |       {
+smoke-1  |         "sensor_id": "ULT1-b07",
+smoke-1  |         "event_id": "ULT1-b07@20201219T093111Z",
+smoke-1  |         "original_elapsed_s": 311.0,
+smoke-1  |         "released_elapsed_s": 594.0
+smoke-1  |       },
+smoke-1  |       {
+smoke-1  |         "sensor_id": "ULT1-b07",
+smoke-1  |         "event_id": "ULT1-b07@20201219T093120Z",
+smoke-1  |         "original_elapsed_s": 320.0,
+smoke-1  |         "released_elapsed_s": 594.0
+smoke-1  |       },
+smoke-1  |       {
+smoke-1  |         "sensor_id": "ULT1-b07",
+smoke-1  |         "event_id": "ULT1-b07@20201219T093131Z",
+smoke-1  |         "original_elapsed_s": 331.0,
+smoke-1  |         "released_elapsed_s": 594.0
+smoke-1  |       },
+smoke-1  |       {
+smoke-1  |         "sensor_id": "ULT1-b07",
+smoke-1  |         "event_id": "ULT1-b07@20201219T093140Z",
+smoke-1  |         "original_elapsed_s": 340.0,
+smoke-1  |         "released_elapsed_s": 594.0
+smoke-1  |       },
+smoke-1  |       {
+smoke-1  |         "sensor_id": "ULT1-b07",
+smoke-1  |         "event_id": "ULT1-b07@20201219T093151Z",
+smoke-1  |         "original_elapsed_s": 351.0,
+smoke-1  |         "released_elapsed_s": 594.0
+smoke-1  |       },
+smoke-1  |       {
+smoke-1  |         "sensor_id": "ULT1-b07",
+smoke-1  |         "event_id": "ULT1-b07@20201219T093201Z",
+smoke-1  |         "original_elapsed_s": 361.0,
+smoke-1  |         "released_elapsed_s": 594.0
+smoke-1  |       },
+smoke-1  |       {
+smoke-1  |         "sensor_id": "ULT1-b07",
+smoke-1  |         "event_id": "ULT1-b07@20201219T093210Z",
+smoke-1  |         "original_elapsed_s": 370.0,
+smoke-1  |         "released_elapsed_s": 594.0
+smoke-1  |       },
+smoke-1  |       {
+smoke-1  |         "sensor_id": "ULT1-b07",
+smoke-1  |         "event_id": "ULT1-b07@20201219T093221Z",
+smoke-1  |         "original_elapsed_s": 381.0,
+smoke-1  |         "released_elapsed_s": 594.0
+smoke-1  |       },
+smoke-1  |       {
+smoke-1  |         "sensor_id": "ULT1-b07",
+smoke-1  |         "event_id": "ULT1-b07@20201219T093230Z",
+smoke-1  |         "original_elapsed_s": 390.0,
+smoke-1  |         "released_elapsed_s": 594.0
+smoke-1  |       },
+smoke-1  |       {
+smoke-1  |         "sensor_id": "ULT1-b07",
+smoke-1  |         "event_id": "ULT1-b07@20201219T093241Z",
+smoke-1  |         "original_elapsed_s": 401.0,
+smoke-1  |         "released_elapsed_s": 594.0
+smoke-1  |       },
+smoke-1  |       {
+smoke-1  |         "sensor_id": "ULT1-b07",
+smoke-1  |         "event_id": "ULT1-b07@20201219T093250Z",
+smoke-1  |         "original_elapsed_s": 410.0,
+smoke-1  |         "released_elapsed_s": 594.0
+smoke-1  |       },
+smoke-1  |       {
+smoke-1  |         "sensor_id": "ULT1-b07",
+smoke-1  |         "event_id": "ULT1-b07@20201219T093301Z",
+smoke-1  |         "original_elapsed_s": 421.0,
+smoke-1  |         "released_elapsed_s": 594.0
+smoke-1  |       },
+smoke-1  |       {
+smoke-1  |         "sensor_id": "ULT1-b07",
+smoke-1  |         "event_id": "ULT1-b07@20201219T093310Z",
+smoke-1  |         "original_elapsed_s": 430.0,
+smoke-1  |         "released_elapsed_s": 594.0
+smoke-1  |       },
+smoke-1  |       {
+smoke-1  |         "sensor_id": "ULT1-b07",
+smoke-1  |         "event_id": "ULT1-b07@20201219T093321Z",
+smoke-1  |         "original_elapsed_s": 441.0,
+smoke-1  |         "released_elapsed_s": 594.0
+smoke-1  |       },
+smoke-1  |       {
+smoke-1  |         "sensor_id": "ULT1-b07",
+smoke-1  |         "event_id": "ULT1-b07@20201219T093330Z",
+smoke-1  |         "original_elapsed_s": 450.0,
+smoke-1  |         "released_elapsed_s": 594.0
+smoke-1  |       },
+smoke-1  |       {
+smoke-1  |         "sensor_id": "ULT1-b07",
+smoke-1  |         "event_id": "ULT1-b07@20201219T093341Z",
+smoke-1  |         "original_elapsed_s": 461.0,
+smoke-1  |         "released_elapsed_s": 594.0
+smoke-1  |       },
+smoke-1  |       {
+smoke-1  |         "sensor_id": "ULT1-b07",
+smoke-1  |         "event_id": "ULT1-b07@20201219T093350Z",
+smoke-1  |         "original_elapsed_s": 470.0,
+smoke-1  |         "released_elapsed_s": 594.0
+smoke-1  |       }
+smoke-1  |     ],
+smoke-1  |     "partitions": {
+smoke-1  |       "2": 631,
+smoke-1  |       "3": 501,
+smoke-1  |       "0": 620,
+smoke-1  |       "1": 764
+smoke-1  |     },
+smoke-1  |     "delivered": 2516,
+smoke-1  |     "delivery_errors": 0,
+smoke-1  |     "undelivered": 0
+smoke-1  |   },
+smoke-1  |   "windows": 100,
+smoke-1  |   "total_readings": 2346,
+smoke-1  |   "distinct_valid_sent": 2346,
+smoke-1  |   "max_n_readings_observed": 30,
+smoke-1  |   "max_readings_per_window": 31,
+smoke-1  |   "max_readings_per_window_without_dedup": 34,
+smoke-1  |   "late_panes_applied": 0,
+smoke-1  |   "dlq_count": 59
+smoke-1  | }
+
+ Compose Stopping Aborting on container exit...
+smoke-1 exited with code 0
+ Container coldchain-streaming-smoke-1 Stopping 
+ Container coldchain-streaming-smoke-1 Stopped 
+docker compose --profile smoke down
+ Container coldchain-streaming-smoke-1 Stopping 
+ Container coldchain-streaming-smoke-1 Stopped 
+ Container coldchain-streaming-smoke-1 Removing 
+ Container coldchain-streaming-smoke-1 Removed 
+ Container coldchain-streaming-beam-job-server-1 Stopping 
+ Container coldchain-streaming-kafka-1 Stopping 
+ Container coldchain-streaming-dataset-init-1 Stopping 
+ Container coldchain-streaming-dataset-init-1 Stopped 
+ Container coldchain-streaming-dataset-init-1 Removing 
+ Container coldchain-streaming-dataset-init-1 Removed 
+ Container coldchain-streaming-kafka-1 Stopped 
+ Container coldchain-streaming-kafka-1 Removing 
+ Container coldchain-streaming-kafka-1 Removed 
+ Container coldchain-streaming-beam-job-server-1 Stopped 
+ Container coldchain-streaming-beam-job-server-1 Removing 
+ Container coldchain-streaming-beam-job-server-1 Removed 
+ Container coldchain-streaming-taskmanager-1 Stopping 
+ Container coldchain-streaming-taskmanager-2 Stopping 
+ Container coldchain-streaming-taskmanager-1 Stopped 
+ Container coldchain-streaming-taskmanager-1 Removing 
+ Container coldchain-streaming-taskmanager-1 Removed 
+ Container coldchain-streaming-taskmanager-2 Stopped 
+ Container coldchain-streaming-taskmanager-2 Removing 
+ Container coldchain-streaming-taskmanager-2 Removed 
+ Container coldchain-streaming-jobmanager-1 Stopping 
+ Container coldchain-streaming-jobmanager-1 Stopped 
+ Container coldchain-streaming-jobmanager-1 Removing 
+ Container coldchain-streaming-jobmanager-1 Removed 
+ Network coldchain-streaming_default Removing 
+ Network coldchain-streaming_default Removed 
+

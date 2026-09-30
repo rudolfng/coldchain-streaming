@@ -1,0 +1,19 @@
+jobmanager.rpc.address: jobmanager
+parallelism.default: 2
+taskmanager.numberOfTaskSlots: 1
+taskmanager.memory.process.size: 1536m
+taskmanager.memory.task.off-heap.size: 384m
+taskmanager.memory.managed.fraction: 0.1
+taskmanager.memory.network.min: 64m
+taskmanager.memory.network.max: 64m
+jobmanager.memory.process.size: 768m
+execution.checkpointing.interval: 30s
+# EXACTLY_ONCE alcanza solo al estado interno del job (snapshot alineado); los tramos con Kafka
+# siguen siendo at-least-once (README sección 7).
+execution.checkpointing.mode: EXACTLY_ONCE
+execution.checkpointing.min-pause: 5s
+execution.checkpointing.timeout: 180s
+execution.checkpointing.tolerable-failed-checkpoints: 3
+state.backend.type: hashmap
+taskmanager.load-balance.mode: SLOTS
+heartbeat.timeout: 180000

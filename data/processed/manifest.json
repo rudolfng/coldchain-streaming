@@ -1,0 +1,12 @@
+{
+  "source_url": "https://ndownloader.figshare.com/files/28668003",
+  "source_md5": "b8164462feaca1d699a53a2503f92d30",
+  "start_hours": 65.0,
+  "end_hours": 68.0,
+  "rows": 1080,
+  "events": 21600,
+  "sensors": 20,
+  "first_source_time": "2020-12-19T09:26:00+00:00",
+  "last_source_time": "2020-12-19T12:25:51+00:00",
+  "prepared_at": "2026-09-25T00:09:52.518812+00:00"
+}

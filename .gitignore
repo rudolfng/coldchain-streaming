@@ -1,0 +1,42 @@
+# Datos descargados/procesados y artefactos de ejecucion
+# Se ignora el contenido y no la carpeta: git no puede re-incluir un archivo si la carpeta
+# que lo contiene esta excluida entera.
+/data/cache/*
+!/data/cache/.gitkeep
+/data/processed/*
+!/data/processed/.gitkeep
+!/data/processed/manifest.json
+/data/out/*
+!/data/out/.gitkeep
+/tmp/
+*.log
+!docs/evidencia/*.log
+
+# Entornos y secretos locales
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+/build/
+/dist/
+
+# Herramientas de desarrollo y pruebas
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.pyright/
+.coverage
+.coverage.*
+/htmlcov/
+
+# Editor y sistema operativo
+.DS_Store
+.idea/
+.vscode/

@@ -1,0 +1,195 @@
+name: coldchain-streaming
+
+x-lab-environment: &lab-environment
+  KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+  TOPIC_RAW: coldchain.telemetry.raw.v1
+  TOPIC_METRICS: coldchain.metrics.5min.v1
+  TOPIC_DLQ: coldchain.telemetry.dlq.v1
+  BEAM_JOB_ENDPOINT: beam-job-server:8099
+  BEAM_PARALLELISM: "${BEAM_PARALLELISM:-2}"
+  WINDOW_SECONDS: "${WINDOW_SECONDS:-300}"
+  ALLOWED_LATENESS_SECONDS: "${ALLOWED_LATENESS_SECONDS:-900}"
+  EARLY_FIRING_SECONDS: "${EARLY_FIRING_SECONDS:-5}"
+  REPLAY_START_HOURS: "${REPLAY_START_HOURS:-65}"
+  REPLAY_END_HOURS: "${REPLAY_END_HOURS:-68}"
+  REPLAY_SPEEDUP: "${REPLAY_SPEEDUP:-20}"
+  REPLAY_SEED: "${REPLAY_SEED:-7}"
+  REPLAY_INJECTIONS: "${REPLAY_INJECTIONS:-demo}"
+  REPLAY_DUPLICATE_RATE: "${REPLAY_DUPLICATE_RATE:-0.02}"
+  REPLAY_INVALID_RATE: "${REPLAY_INVALID_RATE:-0.005}"
+  REPLAY_ALIGN_START: "${REPLAY_ALIGN_START:-0}"
+  SINK_PATH: data/out/metrics.sqlite
+  COLDCHAIN_ROOT: /app
+
+x-app: &app
+  build:
+    context: .
+    dockerfile: Dockerfile
+  environment: *lab-environment
+  volumes:
+    - ./data:/app/data
+  restart: "no"
+
+services:
+  kafka:
+    image: apache/kafka:4.1.1
+    ports:
+      - "29092:29092"
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: CONTROLLER://:9093,PLAINTEXT://:9092,PLAINTEXT_HOST://:29092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_NUM_PARTITIONS: 4
+      KAFKA_LOG_RETENTION_HOURS: 24
+      # El replay acelera el reloj de pared pero conserva el tiempo de evento: un mensaje
+      # puede llegar con varias horas de diferencia respecto del reloj del broker.
+      KAFKA_LOG_MESSAGE_TIMESTAMP_AFTER_MAX_MS: 86400000
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+    volumes:
+      - kafka-data:/var/lib/kafka/data
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --list >/dev/null 2>&1"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    mem_limit: 1200m
+
+  kafka-init:
+    image: apache/kafka:4.1.1
+    depends_on:
+      kafka:
+        condition: service_healthy
+    entrypoint: ["/bin/bash", "-ec"]
+    command:
+      - |
+        for topic in coldchain.telemetry.raw.v1 coldchain.metrics.5min.v1 coldchain.telemetry.dlq.v1; do
+          /opt/kafka/bin/kafka-topics.sh \
+            --bootstrap-server kafka:9092 \
+            --create --if-not-exists \
+            --topic "$$topic" --partitions 4 --replication-factor 1
+        done
+        /opt/kafka/bin/kafka-topics.sh --bootstrap-server kafka:9092 --describe
+
+  dataset-init:
+    <<: *app
+    command: ["/app/.venv/bin/python", "-m", "coldchain_streaming.dataset"]
+
+  jobmanager:
+    platform: ${BEAM_PLATFORM:-linux/amd64}
+    build:
+      context: .
+      dockerfile: docker/flink/Dockerfile
+    command: jobmanager
+    ports:
+      - "8081:8081"
+    environment:
+      FLINK_PROPERTIES: |
+        jobmanager.rpc.address: jobmanager
+        jobmanager.memory.process.size: 768m
+        parallelism.default: ${BEAM_PARALLELISM:-2}
+        heartbeat.timeout: 180000
+    volumes:
+      - beam-artifacts:/tmp/beam-artifact-staging
+    mem_limit: 900m
+
+  taskmanager:
+    platform: ${BEAM_PLATFORM:-linux/amd64}
+    build:
+      context: .
+      dockerfile: docker/flink/Dockerfile
+    command: taskmanager
+    depends_on:
+      - jobmanager
+    environment:
+      FLINK_PROPERTIES: |
+        jobmanager.rpc.address: jobmanager
+        taskmanager.numberOfTaskSlots: 1
+        taskmanager.memory.process.size: 1536m
+        taskmanager.memory.task.off-heap.size: 384m
+        taskmanager.memory.managed.fraction: 0.1
+        taskmanager.memory.network.min: 64m
+        taskmanager.memory.network.max: 64m
+        parallelism.default: ${BEAM_PARALLELISM:-2}
+        taskmanager.load-balance.mode: SLOTS
+        heartbeat.timeout: 180000
+    volumes:
+      - beam-artifacts:/tmp/beam-artifact-staging
+    deploy:
+      replicas: 2
+    mem_limit: 1600m
+    # heartbeat.timeout de 3 min (default 50 s): una pausa del host (VM, laptop) no da por
+    # perdido al TaskManager ni reinicia el job. Si igual cae (cada reinicio del job deja
+    # clases de Beam en metaspace y tras varios muere con OutOfMemoryError: Metaspace,
+    # exit 239), Docker lo relanza limpio y el job sigue desde el último checkpoint.
+    restart: unless-stopped
+
+  beam-job-server:
+    platform: ${BEAM_PLATFORM:-linux/amd64}
+    image: apache/beam_flink1.19_job_server:2.74.0
+    command:
+      - --flink-master=jobmanager:8081
+      - --job-host=beam-job-server
+      - --flink-conf-dir=/flink-conf
+    volumes:
+      - ./docker/flink:/flink-conf:ro
+      - beam-artifacts:/tmp/beam-artifact-staging
+    ports:
+      - "8099:8099"
+    depends_on:
+      - jobmanager
+      - taskmanager
+    mem_limit: 900m
+
+  pipeline:
+    <<: *app
+    command: ["/app/.venv/bin/python", "-m", "coldchain_streaming.pipeline"]
+    restart: unless-stopped
+    depends_on:
+      kafka-init:
+        condition: service_completed_successfully
+      beam-job-server:
+        condition: service_started
+
+  consumer:
+    <<: *app
+    command: ["/app/.venv/bin/python", "-m", "coldchain_streaming.consumer"]
+    restart: unless-stopped
+    depends_on:
+      kafka-init:
+        condition: service_completed_successfully
+
+  producer:
+    <<: *app
+    profiles: ["replay"]
+    command: ["/app/.venv/bin/python", "-m", "coldchain_streaming.producer"]
+    depends_on:
+      kafka:
+        condition: service_healthy
+      kafka-init:
+        condition: service_completed_successfully
+      dataset-init:
+        condition: service_completed_successfully
+
+  smoke:
+    <<: *app
+    profiles: ["smoke"]
+    command: ["/app/.venv/bin/python", "scripts/smoke.py"]
+    depends_on:
+      kafka:
+        condition: service_healthy
+      dataset-init:
+        condition: service_completed_successfully
+      beam-job-server:
+        condition: service_started
+
+volumes:
+  kafka-data:
+  beam-artifacts:

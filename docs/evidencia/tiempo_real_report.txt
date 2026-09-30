@@ -1,0 +1,593 @@
+# Demo en tiempo real (REPLAY_SPEEDUP=1, subtramo 66:15-67:15), 2026-09-25. Resumen en README.
+
+## 1. make show a las 15:55:51, antes de liberar ULT1-b07 (recorte: b06 y b07)
+
+Reporte generado 2026-09-25T15:55:51Z (sink data\out\metrics.sqlite, broker localhost:29092)
+== Ventanas materializadas (58) ==
+ULT1-b06  2026-09-25T15:45:00Z  n= 30  min= -81.40  max= -81.35  FUERA DE RANGO  ultimo_pane=ON_TIME#29 (abierta)
+ULT1-b06  2026-09-25T15:50:00Z  n= 30  min= -81.43  max= -81.34  FUERA DE RANGO  ultimo_pane=ON_TIME#29 (abierta)
+ULT1-b06  2026-09-25T15:55:00Z  n=  4  min= -81.45  max= -81.42  FUERA DE RANGO  ultimo_pane=EARLY#3 (abierta)
+ULT1-b07  2026-09-25T15:45:00Z  n= 29  min= -80.88  max= -80.83  FUERA DE RANGO  ultimo_pane=ON_TIME#28 (abierta)
+
+## 2. make show final, a las 17:06, despues de vencer el lateness de la ultima ventana
+
+Reporte generado 2026-09-25T17:06:36Z (sink data\out\metrics.sqlite, broker localhost:29092)
+
+== Ventanas materializadas (239) ==
+ULT1-b01  2026-09-25T15:45:00Z  n= 30  min= -82.55  max= -82.47  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b01  2026-09-25T15:50:00Z  n= 30  min= -82.53  max= -82.42  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b01  2026-09-25T15:55:00Z  n= 30  min= -82.58  max= -82.48  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b01  2026-09-25T16:00:00Z  n= 30  min= -82.58  max= -82.50  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b01  2026-09-25T16:05:00Z  n= 30  min= -82.69  max= -82.51  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b01  2026-09-25T16:10:00Z  n= 30  min= -82.84  max= -82.67  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b01  2026-09-25T16:15:00Z  n= 30  min= -82.89  max= -82.44  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b01  2026-09-25T16:20:00Z  n= 30  min= -82.67  max= -82.36  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b01  2026-09-25T16:25:00Z  n= 29  min= -82.75  max= -82.12  FUERA DE RANGO  ultimo_pane=LATE#28 (final)
+ULT1-b01  2026-09-25T16:30:00Z  n= 30  min= -82.58  max= -82.31  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b01  2026-09-25T16:35:00Z  n= 28  min= -82.59  max= -82.50  FUERA DE RANGO  ultimo_pane=LATE#28 (final)
+ULT1-b01  2026-09-25T16:40:00Z  n= 30  min= -82.58  max= -81.85  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b02  2026-09-25T15:45:00Z  n= 29  min= -82.43  max= -82.36  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b02  2026-09-25T15:50:00Z  n= 30  min= -82.41  max= -82.31  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b02  2026-09-25T15:55:00Z  n= 30  min= -82.48  max= -82.37  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b02  2026-09-25T16:00:00Z  n= 28  min= -82.47  max= -82.41  FUERA DE RANGO  ultimo_pane=LATE#28 (final)
+ULT1-b02  2026-09-25T16:05:00Z  n= 30  min= -82.61  max= -82.44  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b02  2026-09-25T16:10:00Z  n= 30  min= -82.85  max= -82.63  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b02  2026-09-25T16:15:00Z  n= 30  min= -82.87  max= -82.26  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b02  2026-09-25T16:20:00Z  n= 30  min= -82.60  max= -82.21  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b02  2026-09-25T16:25:00Z  n= 30  min= -82.71  max= -81.96  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b02  2026-09-25T16:30:00Z  n= 30  min= -82.49  max= -82.21  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b02  2026-09-25T16:35:00Z  n= 30  min= -82.50  max= -82.40  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b02  2026-09-25T16:40:00Z  n= 30  min= -82.47  max= -81.65  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b03  2026-09-25T15:45:00Z  n= 30  min= -80.09  max= -80.03  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b03  2026-09-25T15:50:00Z  n= 30  min= -80.06  max= -79.99  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b03  2026-09-25T15:55:00Z  n= 30  min= -80.11  max= -80.05  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b03  2026-09-25T16:00:00Z  n= 30  min= -80.14  max= -80.07  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b03  2026-09-25T16:05:00Z  n= 30  min= -80.21  max= -80.10  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b03  2026-09-25T16:10:00Z  n= 30  min= -80.36  max= -80.23  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b03  2026-09-25T16:15:00Z  n= 30  min= -80.41  max= -79.97  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b03  2026-09-25T16:20:00Z  n= 30  min= -80.22  max= -79.92  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b03  2026-09-25T16:25:00Z  n= 29  min= -80.31  max= -79.69  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b03  2026-09-25T16:30:00Z  n= 29  min= -80.15  max= -79.85  FUERA DE RANGO  ultimo_pane=LATE#27 (final)
+ULT1-b03  2026-09-25T16:35:00Z  n= 30  min= -80.17  max= -80.07  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b03  2026-09-25T16:40:00Z  n= 29  min= -80.15  max= -79.49  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b04  2026-09-25T15:45:00Z  n= 30  min= -82.17  max= -82.12  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b04  2026-09-25T15:50:00Z  n= 30  min= -82.16  max= -82.09  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b04  2026-09-25T15:55:00Z  n= 30  min= -82.21  max= -82.13  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b04  2026-09-25T16:00:00Z  n= 30  min= -82.22  max= -82.15  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b04  2026-09-25T16:05:00Z  n= 30  min= -82.32  max= -82.19  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b04  2026-09-25T16:10:00Z  n= 30  min= -82.44  max= -82.30  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b04  2026-09-25T16:15:00Z  n= 30  min= -82.50  max= -82.05  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b04  2026-09-25T16:20:00Z  n= 30  min= -82.31  max= -81.98  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b04  2026-09-25T16:25:00Z  n= 30  min= -82.38  max= -81.76  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b04  2026-09-25T16:30:00Z  n= 30  min= -82.23  max= -81.98  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b04  2026-09-25T16:35:00Z  n= 30  min= -82.26  max= -82.18  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b04  2026-09-25T16:40:00Z  n= 30  min= -82.25  max= -81.54  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b05  2026-09-25T15:45:00Z  n= 29  min= -79.70  max= -79.65  ok              ultimo_pane=LATE#29 (final)
+ULT1-b05  2026-09-25T15:50:00Z  n= 29  min= -79.72  max= -79.63  ok              ultimo_pane=LATE#29 (final)
+ULT1-b05  2026-09-25T15:55:00Z  n= 30  min= -79.82  max= -79.69  ok              ultimo_pane=LATE#29 (final)
+ULT1-b05  2026-09-25T16:00:00Z  n= 30  min= -79.82  max= -79.73  ok              ultimo_pane=LATE#30 (final)
+ULT1-b05  2026-09-25T16:05:00Z  n= 30  min= -79.96  max= -79.77  ok              ultimo_pane=LATE#30 (final)
+ULT1-b05  2026-09-25T16:10:00Z  n= 30  min= -80.24  max= -79.97  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b05  2026-09-25T16:15:00Z  n= 30  min= -80.35  max= -79.81  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b05  2026-09-25T16:20:00Z  n= 30  min= -80.17  max= -79.76  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b05  2026-09-25T16:25:00Z  n= 29  min= -80.27  max= -79.45  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b05  2026-09-25T16:30:00Z  n= 30  min= -79.99  max= -79.63  ok              ultimo_pane=LATE#30 (final)
+ULT1-b05  2026-09-25T16:35:00Z  n= 30  min= -80.01  max= -79.90  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b05  2026-09-25T16:40:00Z  n= 29  min= -79.96  max= -79.08  ok              ultimo_pane=LATE#29 (final)
+ULT1-b06  2026-09-25T15:45:00Z  n= 30  min= -81.40  max= -81.35  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b06  2026-09-25T15:50:00Z  n= 30  min= -81.43  max= -81.34  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b06  2026-09-25T15:55:00Z  n= 30  min= -81.50  max= -81.42  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b06  2026-09-25T16:00:00Z  n= 28  min= -81.53  max= -81.45  FUERA DE RANGO  ultimo_pane=LATE#28 (final)
+ULT1-b06  2026-09-25T16:05:00Z  n= 30  min= -81.76  max= -81.49  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b06  2026-09-25T16:10:00Z  n= 30  min= -82.06  max= -81.76  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b06  2026-09-25T16:15:00Z  n= 29  min= -82.16  max= -81.39  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b06  2026-09-25T16:20:00Z  n= 30  min= -81.91  max= -81.34  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b06  2026-09-25T16:25:00Z  n= 30  min= -82.07  max= -81.02  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b06  2026-09-25T16:30:00Z  n= 30  min= -81.69  max= -81.37  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b06  2026-09-25T16:35:00Z  n= 30  min= -81.71  max= -81.59  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b06  2026-09-25T16:40:00Z  n= 30  min= -81.65  max= -80.57  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b07  2026-09-25T15:45:00Z  n= 29  min= -80.88  max= -80.83  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b07  2026-09-25T15:50:00Z  n= 30  min= -80.89  max= -80.80  FUERA DE RANGO  ultimo_pane=LATE#31 (final)
+ULT1-b07  2026-09-25T15:55:00Z  n= 29  min= -80.95  max= -80.83  FUERA DE RANGO  ultimo_pane=LATE#24 (final)
+ULT1-b07  2026-09-25T16:00:00Z  n= 30  min= -81.00  max= -80.89  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b07  2026-09-25T16:05:00Z  n= 30  min= -81.17  max= -80.97  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b07  2026-09-25T16:10:00Z  n= 30  min= -81.35  max= -81.15  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b07  2026-09-25T16:15:00Z  n= 30  min= -81.45  max= -80.91  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b07  2026-09-25T16:20:00Z  n= 30  min= -81.30  max= -80.85  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b07  2026-09-25T16:25:00Z  n= 30  min= -81.41  max= -80.60  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b07  2026-09-25T16:30:00Z  n= 30  min= -81.18  max= -80.83  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b07  2026-09-25T16:35:00Z  n= 30  min= -81.19  max= -81.10  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b07  2026-09-25T16:40:00Z  n= 30  min= -81.15  max= -80.28  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b08  2026-09-25T15:45:00Z  n= 30  min= -81.57  max= -81.51  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b08  2026-09-25T15:50:00Z  n= 30  min= -81.60  max= -81.48  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b08  2026-09-25T15:55:00Z  n= 29  min= -81.64  max= -81.55  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b08  2026-09-25T16:00:00Z  n= 30  min= -81.67  max= -81.60  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b08  2026-09-25T16:05:00Z  n= 30  min= -81.85  max= -81.66  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b08  2026-09-25T16:10:00Z  n= 30  min= -82.08  max= -81.83  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b08  2026-09-25T16:15:00Z  n= 29  min= -82.22  max= -81.65  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b08  2026-09-25T16:20:00Z  n= 30  min= -82.02  max= -81.56  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b08  2026-09-25T16:25:00Z  n= 30  min= -82.13  max= -81.30  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b08  2026-09-25T16:30:00Z  n= 30  min= -81.85  max= -81.51  FUERA DE RANGO  ultimo_pane=LATE#28 (final)
+ULT1-b08  2026-09-25T16:35:00Z  n= 30  min= -81.87  max= -81.74  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b08  2026-09-25T16:40:00Z  n= 30  min= -81.80  max= -80.91  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b09  2026-09-25T15:45:00Z  n= 30  min= -79.99  max= -79.93  ok              ultimo_pane=LATE#30 (final)
+ULT1-b09  2026-09-25T15:50:00Z  n= 30  min= -79.99  max= -79.89  ok              ultimo_pane=LATE#30 (final)
+ULT1-b09  2026-09-25T15:55:00Z  n= 30  min= -80.05  max= -79.95  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b09  2026-09-25T16:00:00Z  n= 30  min= -80.09  max= -80.00  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b09  2026-09-25T16:05:00Z  n= 30  min= -80.23  max= -80.06  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b09  2026-09-25T16:10:00Z  n= 30  min= -80.45  max= -80.21  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b09  2026-09-25T16:15:00Z  n= 30  min= -80.57  max= -80.00  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b09  2026-09-25T16:20:00Z  n= 30  min= -80.40  max= -79.98  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b09  2026-09-25T16:25:00Z  n= 29  min= -80.52  max= -79.69  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b09  2026-09-25T16:30:00Z  n= 30  min= -80.25  max= -79.90  FUERA DE RANGO  ultimo_pane=LATE#28 (final)
+ULT1-b09  2026-09-25T16:35:00Z  n= 30  min= -80.28  max= -80.18  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b09  2026-09-25T16:40:00Z  n= 30  min= -80.22  max= -79.37  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b10  2026-09-25T15:45:00Z  n= 29  min= -81.93  max= -81.86  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b10  2026-09-25T15:50:00Z  n= 30  min= -81.94  max= -81.85  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b10  2026-09-25T15:55:00Z  n= 30  min= -82.01  max= -81.91  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b10  2026-09-25T16:00:00Z  n= 29  min= -82.03  max= -81.96  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b10  2026-09-25T16:05:00Z  n= 30  min= -82.16  max= -81.99  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b10  2026-09-25T16:10:00Z  n= 30  min= -82.31  max= -82.13  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b10  2026-09-25T16:15:00Z  n= 30  min= -82.39  max= -81.82  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b10  2026-09-25T16:20:00Z  n= 30  min= -82.24  max= -81.79  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b10  2026-09-25T16:25:00Z  n= 30  min= -82.38  max= -81.58  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b10  2026-09-25T16:30:00Z  n= 30  min= -82.18  max= -81.83  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b10  2026-09-25T16:35:00Z  n= 30  min= -82.21  max= -82.13  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b10  2026-09-25T16:40:00Z  n= 29  min= -82.16  max= -81.31  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b11  2026-09-25T15:45:00Z  n= 29  min= -79.07  max= -79.01  ok              ultimo_pane=LATE#29 (final)
+ULT1-b11  2026-09-25T15:50:00Z  n= 30  min= -79.07  max= -78.97  ok              ultimo_pane=LATE#30 (final)
+ULT1-b11  2026-09-25T15:55:00Z  n= 29  min= -79.14  max= -79.05  ok              ultimo_pane=LATE#28 (final)
+ULT1-b11  2026-09-25T16:00:00Z  n= 30  min= -79.17  max= -79.07  ok              ultimo_pane=LATE#30 (final)
+ULT1-b11  2026-09-25T16:05:00Z  n= 29  min= -79.30  max= -79.14  ok              ultimo_pane=LATE#30 (final)
+ULT1-b11  2026-09-25T16:10:00Z  n= 30  min= -79.48  max= -79.28  ok              ultimo_pane=LATE#30 (final)
+ULT1-b11  2026-09-25T16:15:00Z  n= 30  min= -79.57  max= -78.94  ok              ultimo_pane=LATE#30 (final)
+ULT1-b11  2026-09-25T16:20:00Z  n= 30  min= -79.42  max= -78.87  ok              ultimo_pane=LATE#30 (final)
+ULT1-b11  2026-09-25T16:25:00Z  n= 29  min= -79.51  max= -78.61  ok              ultimo_pane=LATE#29 (final)
+ULT1-b11  2026-09-25T16:30:00Z  n= 30  min= -79.29  max= -78.90  ok              ultimo_pane=LATE#30 (final)
+ULT1-b11  2026-09-25T16:35:00Z  n= 30  min= -79.32  max= -79.24  ok              ultimo_pane=LATE#30 (final)
+ULT1-b11  2026-09-25T16:40:00Z  n= 29  min= -79.27  max= -78.30  ok              ultimo_pane=LATE#29 (final)
+ULT1-b12  2026-09-25T15:45:00Z  n= 30  min= -81.04  max= -80.98  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b12  2026-09-25T15:50:00Z  n= 30  min= -81.04  max= -80.94  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b12  2026-09-25T15:55:00Z  n= 30  min= -81.11  max= -81.00  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b12  2026-09-25T16:00:00Z  n= 30  min= -81.15  max= -81.05  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b12  2026-09-25T16:05:00Z  n= 30  min= -81.32  max= -81.12  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b12  2026-09-25T16:15:00Z  n= 30  min= -81.56  max= -80.86  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b12  2026-09-25T16:20:00Z  n= 30  min= -81.39  max= -80.84  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b12  2026-09-25T16:25:00Z  n= 30  min= -81.50  max= -80.58  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b12  2026-09-25T16:30:00Z  n= 30  min= -81.29  max= -80.91  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b12  2026-09-25T16:35:00Z  n= 30  min= -81.32  max= -81.22  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b12  2026-09-25T16:40:00Z  n= 30  min= -81.25  max= -80.24  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b13  2026-09-25T15:45:00Z  n= 30  min= -81.34  max= -81.24  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b13  2026-09-25T15:50:00Z  n= 29  min= -81.32  max= -81.21  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b13  2026-09-25T15:55:00Z  n= 30  min= -81.39  max= -81.27  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b13  2026-09-25T16:00:00Z  n= 30  min= -81.38  max= -81.29  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b13  2026-09-25T16:05:00Z  n= 29  min= -81.62  max= -81.32  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b13  2026-09-25T16:10:00Z  n= 30  min= -81.85  max= -81.60  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b13  2026-09-25T16:15:00Z  n= 30  min= -81.92  max= -80.99  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b13  2026-09-25T16:20:00Z  n= 30  min= -81.61  max= -80.96  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b13  2026-09-25T16:25:00Z  n= 30  min= -81.80  max= -80.60  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b13  2026-09-25T16:30:00Z  n= 30  min= -81.42  max= -81.01  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b13  2026-09-25T16:35:00Z  n= 30  min= -81.41  max= -81.33  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b13  2026-09-25T16:40:00Z  n= 29  min= -81.38  max= -80.18  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b14  2026-09-25T15:45:00Z  n= 30  min= -78.35  max= -78.26  ok              ultimo_pane=LATE#30 (final)
+ULT1-b14  2026-09-25T15:50:00Z  n= 30  min= -78.30  max= -78.22  ok              ultimo_pane=LATE#30 (final)
+ULT1-b14  2026-09-25T15:55:00Z  n= 30  min= -78.37  max= -78.27  ok              ultimo_pane=LATE#30 (final)
+ULT1-b14  2026-09-25T16:00:00Z  n= 30  min= -78.39  max= -78.32  ok              ultimo_pane=LATE#30 (final)
+ULT1-b14  2026-09-25T16:05:00Z  n= 30  min= -78.56  max= -78.35  ok              ultimo_pane=LATE#30 (final)
+ULT1-b14  2026-09-25T16:10:00Z  n= 30  min= -78.74  max= -78.56  ok              ultimo_pane=LATE#30 (final)
+ULT1-b14  2026-09-25T16:15:00Z  n= 30  min= -78.83  max= -78.25  ok              ultimo_pane=LATE#30 (final)
+ULT1-b14  2026-09-25T16:20:00Z  n= 30  min= -78.58  max= -78.10  ok              ultimo_pane=LATE#29 (final)
+ULT1-b14  2026-09-25T16:25:00Z  n= 30  min= -78.74  max= -77.78  ok              ultimo_pane=LATE#29 (final)
+ULT1-b14  2026-09-25T16:30:00Z  n= 30  min= -78.49  max= -78.04  ok              ultimo_pane=LATE#29 (final)
+ULT1-b14  2026-09-25T16:35:00Z  n= 30  min= -78.50  max= -78.41  ok              ultimo_pane=LATE#30 (final)
+ULT1-b14  2026-09-25T16:40:00Z  n= 30  min= -78.46  max= -77.44  ok              ultimo_pane=LATE#29 (final)
+ULT1-b15  2026-09-25T15:45:00Z  n= 28  min= -80.55  max= -80.47  FUERA DE RANGO  ultimo_pane=LATE#28 (final)
+ULT1-b15  2026-09-25T15:50:00Z  n= 29  min= -80.53  max= -80.43  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b15  2026-09-25T15:55:00Z  n= 30  min= -80.57  max= -80.48  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b15  2026-09-25T16:00:00Z  n= 30  min= -80.60  max= -80.53  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b15  2026-09-25T16:05:00Z  n= 30  min= -80.77  max= -80.57  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b15  2026-09-25T16:10:00Z  n= 30  min= -80.94  max= -80.75  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b15  2026-09-25T16:15:00Z  n= 30  min= -81.00  max= -80.43  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b15  2026-09-25T16:20:00Z  n= 30  min= -80.80  max= -80.31  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b15  2026-09-25T16:25:00Z  n= 30  min= -80.94  max= -80.00  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b15  2026-09-25T16:30:00Z  n= 30  min= -80.70  max= -80.28  FUERA DE RANGO  ultimo_pane=LATE#28 (final)
+ULT1-b15  2026-09-25T16:35:00Z  n= 29  min= -80.71  max= -80.63  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b15  2026-09-25T16:40:00Z  n= 30  min= -80.68  max= -79.70  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b16  2026-09-25T15:45:00Z  n= 30  min= -80.32  max= -80.27  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b16  2026-09-25T15:50:00Z  n= 30  min= -80.32  max= -80.21  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b16  2026-09-25T15:55:00Z  n= 29  min= -80.36  max= -80.27  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b16  2026-09-25T16:00:00Z  n= 30  min= -80.40  max= -80.31  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b16  2026-09-25T16:05:00Z  n= 30  min= -80.52  max= -80.34  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b16  2026-09-25T16:10:00Z  n= 28  min= -80.70  max= -80.51  FUERA DE RANGO  ultimo_pane=LATE#28 (final)
+ULT1-b16  2026-09-25T16:15:00Z  n= 30  min= -80.78  max= -80.17  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b16  2026-09-25T16:20:00Z  n= 29  min= -80.57  max= -80.09  FUERA DE RANGO  ultimo_pane=LATE#28 (final)
+ULT1-b16  2026-09-25T16:25:00Z  n= 30  min= -80.72  max= -79.85  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b16  2026-09-25T16:30:00Z  n= 30  min= -80.50  max= -80.07  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b16  2026-09-25T16:35:00Z  n= 30  min= -80.51  max= -80.43  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b16  2026-09-25T16:40:00Z  n= 28  min= -80.47  max= -79.49  FUERA DE RANGO  ultimo_pane=LATE#28 (final)
+ULT1-b17  2026-09-25T15:45:00Z  n= 30  min= -79.09  max= -79.00  ok              ultimo_pane=LATE#30 (final)
+ULT1-b17  2026-09-25T15:50:00Z  n= 29  min= -79.07  max= -78.97  ok              ultimo_pane=LATE#29 (final)
+ULT1-b17  2026-09-25T15:55:00Z  n= 30  min= -79.14  max= -79.03  ok              ultimo_pane=LATE#30 (final)
+ULT1-b17  2026-09-25T16:00:00Z  n= 30  min= -79.15  max= -79.07  ok              ultimo_pane=LATE#30 (final)
+ULT1-b17  2026-09-25T16:05:00Z  n= 30  min= -79.28  max= -79.10  ok              ultimo_pane=LATE#30 (final)
+ULT1-b17  2026-09-25T16:10:00Z  n= 30  min= -79.47  max= -79.26  ok              ultimo_pane=LATE#30 (final)
+ULT1-b17  2026-09-25T16:15:00Z  n= 30  min= -79.53  max= -78.89  ok              ultimo_pane=LATE#30 (final)
+ULT1-b17  2026-09-25T16:20:00Z  n= 30  min= -79.33  max= -78.84  ok              ultimo_pane=LATE#29 (final)
+ULT1-b17  2026-09-25T16:25:00Z  n= 30  min= -79.46  max= -78.60  ok              ultimo_pane=LATE#29 (final)
+ULT1-b17  2026-09-25T16:30:00Z  n= 30  min= -79.24  max= -78.82  ok              ultimo_pane=LATE#29 (final)
+ULT1-b17  2026-09-25T16:35:00Z  n= 30  min= -79.25  max= -79.17  ok              ultimo_pane=LATE#30 (final)
+ULT1-b17  2026-09-25T16:40:00Z  n= 30  min= -79.20  max= -78.20  ok              ultimo_pane=LATE#29 (final)
+ULT1-b18  2026-09-25T15:45:00Z  n= 30  min= -81.29  max= -81.22  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b18  2026-09-25T15:50:00Z  n= 29  min= -81.26  max= -81.17  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b18  2026-09-25T15:55:00Z  n= 30  min= -81.31  max= -81.21  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b18  2026-09-25T16:00:00Z  n= 30  min= -81.34  max= -81.27  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b18  2026-09-25T16:05:00Z  n= 30  min= -81.48  max= -81.32  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b18  2026-09-25T16:10:00Z  n= 30  min= -81.59  max= -81.44  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b18  2026-09-25T16:15:00Z  n= 30  min= -81.65  max= -81.01  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b18  2026-09-25T16:20:00Z  n= 29  min= -81.43  max= -80.93  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b18  2026-09-25T16:25:00Z  n= 30  min= -81.54  max= -80.69  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b18  2026-09-25T16:30:00Z  n= 30  min= -81.36  max= -80.96  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b18  2026-09-25T16:35:00Z  n= 30  min= -81.39  max= -81.32  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b18  2026-09-25T16:40:00Z  n= 30  min= -81.38  max= -80.38  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b19  2026-09-25T15:45:00Z  n= 30  min= -81.60  max= -81.53  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b19  2026-09-25T15:50:00Z  n= 30  min= -81.57  max= -81.48  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b19  2026-09-25T15:55:00Z  n= 30  min= -81.61  max= -81.53  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b19  2026-09-25T16:00:00Z  n= 30  min= -81.65  max= -81.56  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b19  2026-09-25T16:05:00Z  n= 30  min= -81.79  max= -81.59  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b19  2026-09-25T16:10:00Z  n= 30  min= -81.90  max= -81.75  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b19  2026-09-25T16:15:00Z  n= 29  min= -81.95  max= -81.36  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b19  2026-09-25T16:20:00Z  n= 30  min= -81.73  max= -81.26  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b19  2026-09-25T16:25:00Z  n= 30  min= -81.87  max= -81.01  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b19  2026-09-25T16:30:00Z  n= 29  min= -81.70  max= -81.25  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b19  2026-09-25T16:35:00Z  n= 30  min= -81.70  max= -81.63  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b19  2026-09-25T16:40:00Z  n= 30  min= -81.69  max= -80.70  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b20  2026-09-25T15:45:00Z  n= 29  min= -80.50  max= -80.40  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b20  2026-09-25T15:50:00Z  n= 30  min= -80.46  max= -80.35  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b20  2026-09-25T15:55:00Z  n= 29  min= -80.52  max= -80.40  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b20  2026-09-25T16:00:00Z  n= 30  min= -80.53  max= -80.45  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b20  2026-09-25T16:05:00Z  n= 30  min= -80.67  max= -80.48  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b20  2026-09-25T16:10:00Z  n= 30  min= -80.82  max= -80.65  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b20  2026-09-25T16:15:00Z  n= 30  min= -80.87  max= -80.23  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b20  2026-09-25T16:20:00Z  n= 30  min= -80.65  max= -80.13  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b20  2026-09-25T16:25:00Z  n= 29  min= -80.79  max= -79.91  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b20  2026-09-25T16:30:00Z  n= 30  min= -80.60  max= -80.14  FUERA DE RANGO  ultimo_pane=LATE#29 (final)
+ULT1-b20  2026-09-25T16:35:00Z  n= 30  min= -80.61  max= -80.54  FUERA DE RANGO  ultimo_pane=LATE#30 (final)
+ULT1-b20  2026-09-25T16:40:00Z  n= 29  min= -80.58  max= -79.55  FUERA DE RANGO  ultimo_pane=LATE#28 (final)
+
+== Paneles LATE aplicados (270) ==
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=0  recibido=2026-09-25T15:56:01.728408Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=1  recibido=2026-09-25T15:56:01.743917Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=2  recibido=2026-09-25T15:56:01.752554Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=3  recibido=2026-09-25T15:56:01.759584Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=4  recibido=2026-09-25T15:56:01.769071Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=5  recibido=2026-09-25T15:56:01.776611Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=6  recibido=2026-09-25T15:56:01.785202Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=7  recibido=2026-09-25T15:56:01.792253Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=8  recibido=2026-09-25T15:56:01.800636Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=9  recibido=2026-09-25T15:56:01.809241Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=10  recibido=2026-09-25T15:56:01.818359Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=11  recibido=2026-09-25T15:56:01.826024Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=12  recibido=2026-09-25T15:56:01.833812Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=13  recibido=2026-09-25T15:56:01.841890Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=14  recibido=2026-09-25T15:56:01.849958Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=15  recibido=2026-09-25T15:56:01.859283Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=16  recibido=2026-09-25T15:56:01.872712Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=17  recibido=2026-09-25T15:56:01.886059Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=18  recibido=2026-09-25T15:56:01.896642Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=19  recibido=2026-09-25T15:56:01.907249Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=20  recibido=2026-09-25T15:56:01.917840Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=21  recibido=2026-09-25T15:56:01.928444Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=22  recibido=2026-09-25T15:56:01.940521Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=23  recibido=2026-09-25T15:56:01.950977Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=24  recibido=2026-09-25T15:56:01.961923Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=25  recibido=2026-09-25T15:56:01.974346Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=26  recibido=2026-09-25T15:56:01.991798Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=27  recibido=2026-09-25T15:56:02.002715Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=28  recibido=2026-09-25T15:56:02.012048Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=29  recibido=2026-09-25T15:56:02.021458Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=30  recibido=2026-09-25T15:56:02.032786Z
+ULT1-b12|2026-09-25T15:45:00Z  pane_index=30  recibido=2026-09-25T16:05:01.766698Z
+ULT1-b09|2026-09-25T15:45:00Z  pane_index=30  recibido=2026-09-25T16:05:01.790904Z
+ULT1-b11|2026-09-25T15:45:00Z  pane_index=29  recibido=2026-09-25T16:05:01.827348Z
+ULT1-b07|2026-09-25T15:45:00Z  pane_index=29  recibido=2026-09-25T16:05:01.851552Z
+ULT1-b18|2026-09-25T15:45:00Z  pane_index=30  recibido=2026-09-25T16:05:01.859390Z
+ULT1-b06|2026-09-25T15:45:00Z  pane_index=30  recibido=2026-09-25T16:05:01.885252Z
+ULT1-b08|2026-09-25T15:45:00Z  pane_index=30  recibido=2026-09-25T16:05:01.895944Z
+ULT1-b03|2026-09-25T15:45:00Z  pane_index=30  recibido=2026-09-25T16:05:01.904344Z
+ULT1-b05|2026-09-25T15:45:00Z  pane_index=29  recibido=2026-09-25T16:05:01.923630Z
+ULT1-b19|2026-09-25T15:45:00Z  pane_index=30  recibido=2026-09-25T16:05:01.936772Z
+ULT1-b04|2026-09-25T15:45:00Z  pane_index=30  recibido=2026-09-25T16:05:01.947929Z
+ULT1-b15|2026-09-25T15:45:00Z  pane_index=28  recibido=2026-09-25T16:05:01.959983Z
+ULT1-b13|2026-09-25T15:45:00Z  pane_index=30  recibido=2026-09-25T16:05:01.993703Z
+ULT1-b02|2026-09-25T15:45:00Z  pane_index=29  recibido=2026-09-25T16:05:02.019376Z
+ULT1-b20|2026-09-25T15:45:00Z  pane_index=29  recibido=2026-09-25T16:05:02.027259Z
+ULT1-b14|2026-09-25T15:45:00Z  pane_index=30  recibido=2026-09-25T16:05:02.036664Z
+ULT1-b16|2026-09-25T15:45:00Z  pane_index=30  recibido=2026-09-25T16:05:02.055438Z
+ULT1-b17|2026-09-25T15:45:00Z  pane_index=30  recibido=2026-09-25T16:05:02.066282Z
+ULT1-b01|2026-09-25T15:45:00Z  pane_index=30  recibido=2026-09-25T16:05:02.074590Z
+ULT1-b10|2026-09-25T15:45:00Z  pane_index=29  recibido=2026-09-25T16:05:02.091541Z
+ULT1-b09|2026-09-25T15:50:00Z  pane_index=30  recibido=2026-09-25T16:10:01.861584Z
+ULT1-b03|2026-09-25T15:50:00Z  pane_index=30  recibido=2026-09-25T16:10:01.874094Z
+ULT1-b04|2026-09-25T15:50:00Z  pane_index=30  recibido=2026-09-25T16:10:01.890501Z
+ULT1-b13|2026-09-25T15:50:00Z  pane_index=29  recibido=2026-09-25T16:10:01.898424Z
+ULT1-b07|2026-09-25T15:50:00Z  pane_index=31  recibido=2026-09-25T16:10:01.906891Z
+ULT1-b11|2026-09-25T15:50:00Z  pane_index=30  recibido=2026-09-25T16:10:01.915394Z
+ULT1-b08|2026-09-25T15:50:00Z  pane_index=30  recibido=2026-09-25T16:10:01.923127Z
+ULT1-b05|2026-09-25T15:50:00Z  pane_index=29  recibido=2026-09-25T16:10:01.931621Z
+ULT1-b12|2026-09-25T15:50:00Z  pane_index=30  recibido=2026-09-25T16:10:01.957857Z
+ULT1-b19|2026-09-25T15:50:00Z  pane_index=30  recibido=2026-09-25T16:10:01.995796Z
+ULT1-b15|2026-09-25T15:50:00Z  pane_index=29  recibido=2026-09-25T16:10:02.015731Z
+ULT1-b06|2026-09-25T15:50:00Z  pane_index=30  recibido=2026-09-25T16:10:02.027480Z
+ULT1-b18|2026-09-25T15:50:00Z  pane_index=29  recibido=2026-09-25T16:10:02.040440Z
+ULT1-b10|2026-09-25T15:50:00Z  pane_index=30  recibido=2026-09-25T16:10:02.112568Z
+ULT1-b20|2026-09-25T15:50:00Z  pane_index=30  recibido=2026-09-25T16:10:02.120868Z
+ULT1-b02|2026-09-25T15:50:00Z  pane_index=30  recibido=2026-09-25T16:10:02.165857Z
+ULT1-b01|2026-09-25T15:50:00Z  pane_index=30  recibido=2026-09-25T16:10:02.173366Z
+ULT1-b14|2026-09-25T15:50:00Z  pane_index=30  recibido=2026-09-25T16:10:02.180920Z
+ULT1-b17|2026-09-25T15:50:00Z  pane_index=29  recibido=2026-09-25T16:10:02.189647Z
+ULT1-b16|2026-09-25T15:50:00Z  pane_index=30  recibido=2026-09-25T16:10:02.199533Z
+ULT1-b09|2026-09-25T15:55:00Z  pane_index=30  recibido=2026-09-25T16:15:01.732319Z
+ULT1-b19|2026-09-25T15:55:00Z  pane_index=29  recibido=2026-09-25T16:15:01.744952Z
+ULT1-b08|2026-09-25T15:55:00Z  pane_index=29  recibido=2026-09-25T16:15:01.752184Z
+ULT1-b04|2026-09-25T15:55:00Z  pane_index=29  recibido=2026-09-25T16:15:01.767640Z
+ULT1-b06|2026-09-25T15:55:00Z  pane_index=29  recibido=2026-09-25T16:15:01.775520Z
+ULT1-b07|2026-09-25T15:55:00Z  pane_index=24  recibido=2026-09-25T16:15:01.783368Z
+ULT1-b12|2026-09-25T15:55:00Z  pane_index=29  recibido=2026-09-25T16:15:01.791154Z
+ULT1-b13|2026-09-25T15:55:00Z  pane_index=29  recibido=2026-09-25T16:15:01.798121Z
+ULT1-b11|2026-09-25T15:55:00Z  pane_index=28  recibido=2026-09-25T16:15:01.805208Z
+ULT1-b05|2026-09-25T15:55:00Z  pane_index=29  recibido=2026-09-25T16:15:01.858994Z
+ULT1-b18|2026-09-25T15:55:00Z  pane_index=29  recibido=2026-09-25T16:15:01.880640Z
+ULT1-b03|2026-09-25T15:55:00Z  pane_index=30  recibido=2026-09-25T16:15:01.891954Z
+ULT1-b15|2026-09-25T15:55:00Z  pane_index=30  recibido=2026-09-25T16:15:01.900098Z
+ULT1-b20|2026-09-25T15:55:00Z  pane_index=29  recibido=2026-09-25T16:15:01.952891Z
+ULT1-b14|2026-09-25T15:55:00Z  pane_index=30  recibido=2026-09-25T16:15:01.987764Z
+ULT1-b01|2026-09-25T15:55:00Z  pane_index=30  recibido=2026-09-25T16:15:02.008710Z
+ULT1-b02|2026-09-25T15:55:00Z  pane_index=30  recibido=2026-09-25T16:15:02.016451Z
+ULT1-b17|2026-09-25T15:55:00Z  pane_index=30  recibido=2026-09-25T16:15:02.046768Z
+ULT1-b10|2026-09-25T15:55:00Z  pane_index=30  recibido=2026-09-25T16:15:02.054794Z
+ULT1-b16|2026-09-25T15:55:00Z  pane_index=29  recibido=2026-09-25T16:15:02.063143Z
+ULT1-b05|2026-09-25T16:00:00Z  pane_index=30  recibido=2026-09-25T16:20:02.055839Z
+ULT1-b06|2026-09-25T16:00:00Z  pane_index=28  recibido=2026-09-25T16:20:02.080490Z
+ULT1-b07|2026-09-25T16:00:00Z  pane_index=30  recibido=2026-09-25T16:20:02.116137Z
+ULT1-b08|2026-09-25T16:00:00Z  pane_index=30  recibido=2026-09-25T16:20:02.133466Z
+ULT1-b03|2026-09-25T16:00:00Z  pane_index=30  recibido=2026-09-25T16:20:02.141109Z
+ULT1-b19|2026-09-25T16:00:00Z  pane_index=30  recibido=2026-09-25T16:20:02.149387Z
+ULT1-b11|2026-09-25T16:00:00Z  pane_index=30  recibido=2026-09-25T16:20:02.158230Z
+ULT1-b04|2026-09-25T16:00:00Z  pane_index=30  recibido=2026-09-25T16:20:02.166104Z
+ULT1-b15|2026-09-25T16:00:00Z  pane_index=30  recibido=2026-09-25T16:20:02.201396Z
+ULT1-b18|2026-09-25T16:00:00Z  pane_index=30  recibido=2026-09-25T16:20:02.222920Z
+ULT1-b13|2026-09-25T16:00:00Z  pane_index=30  recibido=2026-09-25T16:20:02.233171Z
+ULT1-b09|2026-09-25T16:00:00Z  pane_index=30  recibido=2026-09-25T16:20:02.242608Z
+ULT1-b12|2026-09-25T16:00:00Z  pane_index=30  recibido=2026-09-25T16:20:02.263451Z
+ULT1-b14|2026-09-25T16:00:00Z  pane_index=30  recibido=2026-09-25T16:20:02.317359Z
+ULT1-b02|2026-09-25T16:00:00Z  pane_index=28  recibido=2026-09-25T16:20:02.366816Z
+ULT1-b20|2026-09-25T16:00:00Z  pane_index=30  recibido=2026-09-25T16:20:02.384796Z
+ULT1-b10|2026-09-25T16:00:00Z  pane_index=29  recibido=2026-09-25T16:20:02.393373Z
+ULT1-b17|2026-09-25T16:00:00Z  pane_index=30  recibido=2026-09-25T16:20:02.405080Z
+ULT1-b01|2026-09-25T16:00:00Z  pane_index=30  recibido=2026-09-25T16:20:02.428475Z
+ULT1-b16|2026-09-25T16:00:00Z  pane_index=30  recibido=2026-09-25T16:20:02.438780Z
+ULT1-b15|2026-09-25T16:05:00Z  pane_index=30  recibido=2026-09-25T16:25:01.602215Z
+ULT1-b08|2026-09-25T16:05:00Z  pane_index=30  recibido=2026-09-25T16:25:01.616779Z
+ULT1-b18|2026-09-25T16:05:00Z  pane_index=30  recibido=2026-09-25T16:25:01.625112Z
+ULT1-b07|2026-09-25T16:05:00Z  pane_index=30  recibido=2026-09-25T16:25:01.677414Z
+ULT1-b19|2026-09-25T16:05:00Z  pane_index=30  recibido=2026-09-25T16:25:01.693655Z
+ULT1-b09|2026-09-25T16:05:00Z  pane_index=30  recibido=2026-09-25T16:25:01.703387Z
+ULT1-b05|2026-09-25T16:05:00Z  pane_index=30  recibido=2026-09-25T16:25:01.710982Z
+ULT1-b03|2026-09-25T16:05:00Z  pane_index=30  recibido=2026-09-25T16:25:01.750209Z
+ULT1-b13|2026-09-25T16:05:00Z  pane_index=29  recibido=2026-09-25T16:25:01.789021Z
+ULT1-b04|2026-09-25T16:05:00Z  pane_index=30  recibido=2026-09-25T16:25:01.798987Z
+ULT1-b11|2026-09-25T16:05:00Z  pane_index=30  recibido=2026-09-25T16:25:01.808168Z
+ULT1-b12|2026-09-25T16:05:00Z  pane_index=30  recibido=2026-09-25T16:25:01.817361Z
+ULT1-b06|2026-09-25T16:05:00Z  pane_index=30  recibido=2026-09-25T16:25:01.838378Z
+ULT1-b16|2026-09-25T16:05:00Z  pane_index=30  recibido=2026-09-25T16:25:01.854370Z
+ULT1-b20|2026-09-25T16:05:00Z  pane_index=30  recibido=2026-09-25T16:25:01.901183Z
+ULT1-b01|2026-09-25T16:05:00Z  pane_index=30  recibido=2026-09-25T16:25:01.911707Z
+ULT1-b10|2026-09-25T16:05:00Z  pane_index=30  recibido=2026-09-25T16:25:01.920423Z
+ULT1-b02|2026-09-25T16:05:00Z  pane_index=30  recibido=2026-09-25T16:25:01.929080Z
+ULT1-b17|2026-09-25T16:05:00Z  pane_index=30  recibido=2026-09-25T16:25:01.937457Z
+ULT1-b14|2026-09-25T16:05:00Z  pane_index=30  recibido=2026-09-25T16:25:01.945567Z
+ULT1-b19|2026-09-25T16:10:00Z  pane_index=30  recibido=2026-09-25T16:30:01.948479Z
+ULT1-b08|2026-09-25T16:10:00Z  pane_index=30  recibido=2026-09-25T16:30:01.981394Z
+ULT1-b03|2026-09-25T16:10:00Z  pane_index=30  recibido=2026-09-25T16:30:01.989401Z
+ULT1-b18|2026-09-25T16:10:00Z  pane_index=30  recibido=2026-09-25T16:30:02.005889Z
+ULT1-b15|2026-09-25T16:10:00Z  pane_index=30  recibido=2026-09-25T16:30:02.029849Z
+ULT1-b13|2026-09-25T16:10:00Z  pane_index=30  recibido=2026-09-25T16:30:02.037606Z
+ULT1-b07|2026-09-25T16:10:00Z  pane_index=30  recibido=2026-09-25T16:30:02.054505Z
+ULT1-b04|2026-09-25T16:10:00Z  pane_index=30  recibido=2026-09-25T16:30:02.063093Z
+ULT1-b06|2026-09-25T16:10:00Z  pane_index=30  recibido=2026-09-25T16:30:02.077754Z
+ULT1-b11|2026-09-25T16:10:00Z  pane_index=30  recibido=2026-09-25T16:30:02.086213Z
+ULT1-b09|2026-09-25T16:10:00Z  pane_index=30  recibido=2026-09-25T16:30:02.094520Z
+ULT1-b05|2026-09-25T16:10:00Z  pane_index=30  recibido=2026-09-25T16:30:02.102786Z
+ULT1-b14|2026-09-25T16:10:00Z  pane_index=30  recibido=2026-09-25T16:30:02.159469Z
+ULT1-b16|2026-09-25T16:10:00Z  pane_index=28  recibido=2026-09-25T16:30:02.168988Z
+ULT1-b20|2026-09-25T16:10:00Z  pane_index=30  recibido=2026-09-25T16:30:02.182462Z
+ULT1-b01|2026-09-25T16:10:00Z  pane_index=30  recibido=2026-09-25T16:30:02.208325Z
+ULT1-b10|2026-09-25T16:10:00Z  pane_index=30  recibido=2026-09-25T16:30:02.215877Z
+ULT1-b02|2026-09-25T16:10:00Z  pane_index=30  recibido=2026-09-25T16:30:02.224139Z
+ULT1-b17|2026-09-25T16:10:00Z  pane_index=30  recibido=2026-09-25T16:30:02.272780Z
+ULT1-b19|2026-09-25T16:15:00Z  pane_index=29  recibido=2026-09-25T16:35:01.297216Z
+ULT1-b03|2026-09-25T16:15:00Z  pane_index=30  recibido=2026-09-25T16:35:01.315727Z
+ULT1-b12|2026-09-25T16:15:00Z  pane_index=30  recibido=2026-09-25T16:35:01.333629Z
+ULT1-b06|2026-09-25T16:15:00Z  pane_index=29  recibido=2026-09-25T16:35:01.352842Z
+ULT1-b08|2026-09-25T16:15:00Z  pane_index=29  recibido=2026-09-25T16:35:01.370501Z
+ULT1-b09|2026-09-25T16:15:00Z  pane_index=30  recibido=2026-09-25T16:35:01.378245Z
+ULT1-b04|2026-09-25T16:15:00Z  pane_index=30  recibido=2026-09-25T16:35:01.386151Z
+ULT1-b13|2026-09-25T16:15:00Z  pane_index=30  recibido=2026-09-25T16:35:01.411147Z
+ULT1-b18|2026-09-25T16:15:00Z  pane_index=30  recibido=2026-09-25T16:35:01.477432Z
+ULT1-b15|2026-09-25T16:15:00Z  pane_index=30  recibido=2026-09-25T16:35:01.487152Z
+ULT1-b05|2026-09-25T16:15:00Z  pane_index=30  recibido=2026-09-25T16:35:01.496209Z
+ULT1-b11|2026-09-25T16:15:00Z  pane_index=30  recibido=2026-09-25T16:35:01.506001Z
+ULT1-b07|2026-09-25T16:15:00Z  pane_index=30  recibido=2026-09-25T16:35:01.515394Z
+ULT1-b01|2026-09-25T16:15:00Z  pane_index=30  recibido=2026-09-25T16:35:02.560385Z
+ULT1-b14|2026-09-25T16:15:00Z  pane_index=30  recibido=2026-09-25T16:35:02.582523Z
+ULT1-b10|2026-09-25T16:15:00Z  pane_index=30  recibido=2026-09-25T16:35:02.598641Z
+ULT1-b17|2026-09-25T16:15:00Z  pane_index=30  recibido=2026-09-25T16:35:02.607036Z
+ULT1-b20|2026-09-25T16:15:00Z  pane_index=30  recibido=2026-09-25T16:35:02.631957Z
+ULT1-b16|2026-09-25T16:15:00Z  pane_index=30  recibido=2026-09-25T16:35:02.639971Z
+ULT1-b02|2026-09-25T16:15:00Z  pane_index=30  recibido=2026-09-25T16:35:02.674294Z
+ULT1-b18|2026-09-25T16:20:00Z  pane_index=29  recibido=2026-09-25T16:40:01.835391Z
+ULT1-b06|2026-09-25T16:20:00Z  pane_index=30  recibido=2026-09-25T16:40:01.887556Z
+ULT1-b19|2026-09-25T16:20:00Z  pane_index=30  recibido=2026-09-25T16:40:01.895587Z
+ULT1-b15|2026-09-25T16:20:00Z  pane_index=29  recibido=2026-09-25T16:40:01.935029Z
+ULT1-b08|2026-09-25T16:20:00Z  pane_index=29  recibido=2026-09-25T16:40:01.960385Z
+ULT1-b04|2026-09-25T16:20:00Z  pane_index=30  recibido=2026-09-25T16:40:01.982096Z
+ULT1-b07|2026-09-25T16:20:00Z  pane_index=30  recibido=2026-09-25T16:40:02.001052Z
+ULT1-b05|2026-09-25T16:20:00Z  pane_index=30  recibido=2026-09-25T16:40:02.010950Z
+ULT1-b11|2026-09-25T16:20:00Z  pane_index=30  recibido=2026-09-25T16:40:02.028989Z
+ULT1-b03|2026-09-25T16:20:00Z  pane_index=29  recibido=2026-09-25T16:40:02.039786Z
+ULT1-b09|2026-09-25T16:20:00Z  pane_index=29  recibido=2026-09-25T16:40:02.055252Z
+ULT1-b13|2026-09-25T16:20:00Z  pane_index=30  recibido=2026-09-25T16:40:02.066888Z
+ULT1-b12|2026-09-25T16:20:00Z  pane_index=30  recibido=2026-09-25T16:40:02.076817Z
+ULT1-b17|2026-09-25T16:20:00Z  pane_index=29  recibido=2026-09-25T16:40:02.084653Z
+ULT1-b16|2026-09-25T16:20:00Z  pane_index=28  recibido=2026-09-25T16:40:02.102044Z
+ULT1-b10|2026-09-25T16:20:00Z  pane_index=30  recibido=2026-09-25T16:40:02.111575Z
+ULT1-b20|2026-09-25T16:20:00Z  pane_index=29  recibido=2026-09-25T16:40:02.120801Z
+ULT1-b14|2026-09-25T16:20:00Z  pane_index=29  recibido=2026-09-25T16:40:02.129192Z
+ULT1-b02|2026-09-25T16:20:00Z  pane_index=29  recibido=2026-09-25T16:40:02.195487Z
+ULT1-b01|2026-09-25T16:20:00Z  pane_index=29  recibido=2026-09-25T16:40:02.203953Z
+ULT1-b19|2026-09-25T16:25:00Z  pane_index=30  recibido=2026-09-25T16:45:01.361396Z
+ULT1-b04|2026-09-25T16:25:00Z  pane_index=30  recibido=2026-09-25T16:45:01.378706Z
+ULT1-b08|2026-09-25T16:25:00Z  pane_index=30  recibido=2026-09-25T16:45:01.393154Z
+ULT1-b15|2026-09-25T16:25:00Z  pane_index=30  recibido=2026-09-25T16:45:01.438715Z
+ULT1-b11|2026-09-25T16:25:00Z  pane_index=29  recibido=2026-09-25T16:45:01.475256Z
+ULT1-b03|2026-09-25T16:25:00Z  pane_index=29  recibido=2026-09-25T16:45:01.484931Z
+ULT1-b18|2026-09-25T16:25:00Z  pane_index=30  recibido=2026-09-25T16:45:01.498049Z
+ULT1-b09|2026-09-25T16:25:00Z  pane_index=29  recibido=2026-09-25T16:45:01.522702Z
+ULT1-b05|2026-09-25T16:25:00Z  pane_index=29  recibido=2026-09-25T16:45:01.576046Z
+ULT1-b12|2026-09-25T16:25:00Z  pane_index=30  recibido=2026-09-25T16:45:01.587392Z
+ULT1-b13|2026-09-25T16:25:00Z  pane_index=30  recibido=2026-09-25T16:45:01.597343Z
+ULT1-b06|2026-09-25T16:25:00Z  pane_index=30  recibido=2026-09-25T16:45:01.607240Z
+ULT1-b07|2026-09-25T16:25:00Z  pane_index=30  recibido=2026-09-25T16:45:01.618485Z
+ULT1-b17|2026-09-25T16:25:00Z  pane_index=29  recibido=2026-09-25T16:45:02.686980Z
+ULT1-b02|2026-09-25T16:25:00Z  pane_index=29  recibido=2026-09-25T16:45:02.703779Z
+ULT1-b14|2026-09-25T16:25:00Z  pane_index=29  recibido=2026-09-25T16:45:02.728988Z
+ULT1-b01|2026-09-25T16:25:00Z  pane_index=28  recibido=2026-09-25T16:45:02.746033Z
+ULT1-b20|2026-09-25T16:25:00Z  pane_index=29  recibido=2026-09-25T16:45:02.753676Z
+ULT1-b10|2026-09-25T16:25:00Z  pane_index=30  recibido=2026-09-25T16:45:02.769413Z
+ULT1-b16|2026-09-25T16:25:00Z  pane_index=29  recibido=2026-09-25T16:45:02.777981Z
+ULT1-b05|2026-09-25T16:30:00Z  pane_index=30  recibido=2026-09-25T16:50:01.845661Z
+ULT1-b07|2026-09-25T16:30:00Z  pane_index=30  recibido=2026-09-25T16:50:01.860585Z
+ULT1-b08|2026-09-25T16:30:00Z  pane_index=28  recibido=2026-09-25T16:50:01.868537Z
+ULT1-b04|2026-09-25T16:30:00Z  pane_index=30  recibido=2026-09-25T16:50:01.876480Z
+ULT1-b03|2026-09-25T16:30:00Z  pane_index=27  recibido=2026-09-25T16:50:01.885234Z
+ULT1-b18|2026-09-25T16:30:00Z  pane_index=30  recibido=2026-09-25T16:50:01.893631Z
+ULT1-b13|2026-09-25T16:30:00Z  pane_index=30  recibido=2026-09-25T16:50:01.902297Z
+ULT1-b12|2026-09-25T16:30:00Z  pane_index=30  recibido=2026-09-25T16:50:01.910740Z
+ULT1-b11|2026-09-25T16:30:00Z  pane_index=30  recibido=2026-09-25T16:50:01.919158Z
+ULT1-b09|2026-09-25T16:30:00Z  pane_index=28  recibido=2026-09-25T16:50:01.927061Z
+ULT1-b19|2026-09-25T16:30:00Z  pane_index=29  recibido=2026-09-25T16:50:01.935233Z
+ULT1-b15|2026-09-25T16:30:00Z  pane_index=28  recibido=2026-09-25T16:50:01.943632Z
+ULT1-b06|2026-09-25T16:30:00Z  pane_index=30  recibido=2026-09-25T16:50:01.952429Z
+ULT1-b10|2026-09-25T16:30:00Z  pane_index=30  recibido=2026-09-25T16:50:01.960363Z
+ULT1-b02|2026-09-25T16:30:00Z  pane_index=29  recibido=2026-09-25T16:50:01.968921Z
+ULT1-b01|2026-09-25T16:30:00Z  pane_index=29  recibido=2026-09-25T16:50:01.983949Z
+ULT1-b20|2026-09-25T16:30:00Z  pane_index=29  recibido=2026-09-25T16:50:02.000752Z
+ULT1-b17|2026-09-25T16:30:00Z  pane_index=29  recibido=2026-09-25T16:50:02.012114Z
+ULT1-b16|2026-09-25T16:30:00Z  pane_index=29  recibido=2026-09-25T16:50:02.022385Z
+ULT1-b14|2026-09-25T16:30:00Z  pane_index=29  recibido=2026-09-25T16:50:02.031635Z
+ULT1-b08|2026-09-25T16:35:00Z  pane_index=30  recibido=2026-09-25T16:55:02.088247Z
+ULT1-b13|2026-09-25T16:35:00Z  pane_index=30  recibido=2026-09-25T16:55:02.106243Z
+ULT1-b19|2026-09-25T16:35:00Z  pane_index=30  recibido=2026-09-25T16:55:02.115286Z
+ULT1-b11|2026-09-25T16:35:00Z  pane_index=30  recibido=2026-09-25T16:55:02.124677Z
+ULT1-b09|2026-09-25T16:35:00Z  pane_index=30  recibido=2026-09-25T16:55:02.133403Z
+ULT1-b05|2026-09-25T16:35:00Z  pane_index=30  recibido=2026-09-25T16:55:02.141213Z
+ULT1-b07|2026-09-25T16:35:00Z  pane_index=30  recibido=2026-09-25T16:55:02.149454Z
+ULT1-b04|2026-09-25T16:35:00Z  pane_index=30  recibido=2026-09-25T16:55:02.157120Z
+ULT1-b18|2026-09-25T16:35:00Z  pane_index=30  recibido=2026-09-25T16:55:02.165031Z
+ULT1-b03|2026-09-25T16:35:00Z  pane_index=30  recibido=2026-09-25T16:55:02.173064Z
+ULT1-b12|2026-09-25T16:35:00Z  pane_index=30  recibido=2026-09-25T16:55:02.181526Z
+ULT1-b15|2026-09-25T16:35:00Z  pane_index=29  recibido=2026-09-25T16:55:02.189214Z
+ULT1-b06|2026-09-25T16:35:00Z  pane_index=30  recibido=2026-09-25T16:55:02.197290Z
+ULT1-b16|2026-09-25T16:35:00Z  pane_index=30  recibido=2026-09-25T16:55:02.205711Z
+ULT1-b17|2026-09-25T16:35:00Z  pane_index=30  recibido=2026-09-25T16:55:02.214947Z
+ULT1-b20|2026-09-25T16:35:00Z  pane_index=30  recibido=2026-09-25T16:55:02.224891Z
+ULT1-b02|2026-09-25T16:35:00Z  pane_index=30  recibido=2026-09-25T16:55:02.244290Z
+ULT1-b10|2026-09-25T16:35:00Z  pane_index=30  recibido=2026-09-25T16:55:02.256221Z
+ULT1-b01|2026-09-25T16:35:00Z  pane_index=28  recibido=2026-09-25T16:55:02.266496Z
+ULT1-b14|2026-09-25T16:35:00Z  pane_index=30  recibido=2026-09-25T16:55:02.275385Z
+ULT1-b19|2026-09-25T16:40:00Z  pane_index=30  recibido=2026-09-25T17:00:02.328167Z
+ULT1-b18|2026-09-25T16:40:00Z  pane_index=30  recibido=2026-09-25T17:00:02.338571Z
+ULT1-b03|2026-09-25T16:40:00Z  pane_index=29  recibido=2026-09-25T17:00:02.348363Z
+ULT1-b09|2026-09-25T16:40:00Z  pane_index=29  recibido=2026-09-25T17:00:02.357508Z
+ULT1-b11|2026-09-25T16:40:00Z  pane_index=29  recibido=2026-09-25T17:00:02.366475Z
+ULT1-b08|2026-09-25T16:40:00Z  pane_index=29  recibido=2026-09-25T17:00:02.375363Z
+ULT1-b13|2026-09-25T16:40:00Z  pane_index=29  recibido=2026-09-25T17:00:02.384533Z
+ULT1-b12|2026-09-25T16:40:00Z  pane_index=30  recibido=2026-09-25T17:00:02.393846Z
+ULT1-b05|2026-09-25T16:40:00Z  pane_index=29  recibido=2026-09-25T17:00:02.402663Z
+ULT1-b07|2026-09-25T16:40:00Z  pane_index=30  recibido=2026-09-25T17:00:02.411985Z
+ULT1-b04|2026-09-25T16:40:00Z  pane_index=30  recibido=2026-09-25T17:00:02.420848Z
+ULT1-b06|2026-09-25T16:40:00Z  pane_index=30  recibido=2026-09-25T17:00:02.429442Z
+ULT1-b15|2026-09-25T16:40:00Z  pane_index=29  recibido=2026-09-25T17:00:02.438974Z
+ULT1-b14|2026-09-25T16:40:00Z  pane_index=29  recibido=2026-09-25T17:00:02.460476Z
+ULT1-b17|2026-09-25T16:40:00Z  pane_index=29  recibido=2026-09-25T17:00:02.477256Z
+ULT1-b20|2026-09-25T16:40:00Z  pane_index=28  recibido=2026-09-25T17:00:02.487730Z
+ULT1-b01|2026-09-25T16:40:00Z  pane_index=29  recibido=2026-09-25T17:00:02.498280Z
+ULT1-b16|2026-09-25T16:40:00Z  pane_index=28  recibido=2026-09-25T17:00:02.513722Z
+ULT1-b10|2026-09-25T16:40:00Z  pane_index=29  recibido=2026-09-25T17:00:02.527015Z
+ULT1-b02|2026-09-25T16:40:00Z  pane_index=29  recibido=2026-09-25T17:00:02.538922Z
+
+== Paneles ignorados por ser mas viejos que el guardado (0) ==
+
+== DLQ por motivo (51 eventos) ==
+missing_field:payload.temp_c     29
+temp_not_numeric                 22
+
+## 3. report.py --history ULT1-b07, ventanas 15:50 y 15:55 (las que toco su retencion)
+
+ULT1-b07|2026-09-25T15:50:00Z  LATE#0  n=  1  recibido=2026-09-25T15:56:01.728408Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#1  n=  2  recibido=2026-09-25T15:56:01.743917Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#2  n=  3  recibido=2026-09-25T15:56:01.752554Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#3  n=  4  recibido=2026-09-25T15:56:01.759584Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#4  n=  5  recibido=2026-09-25T15:56:01.769071Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#5  n=  6  recibido=2026-09-25T15:56:01.776611Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#6  n=  7  recibido=2026-09-25T15:56:01.785202Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#7  n=  7  recibido=2026-09-25T15:56:01.792253Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#8  n=  8  recibido=2026-09-25T15:56:01.800636Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#9  n=  9  recibido=2026-09-25T15:56:01.809241Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#10  n= 10  recibido=2026-09-25T15:56:01.818359Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#11  n= 11  recibido=2026-09-25T15:56:01.826024Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#12  n= 12  recibido=2026-09-25T15:56:01.833812Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#13  n= 13  recibido=2026-09-25T15:56:01.841890Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#14  n= 14  recibido=2026-09-25T15:56:01.849958Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#15  n= 15  recibido=2026-09-25T15:56:01.859283Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#16  n= 16  recibido=2026-09-25T15:56:01.872712Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#17  n= 17  recibido=2026-09-25T15:56:01.886059Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#18  n= 18  recibido=2026-09-25T15:56:01.896642Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#19  n= 19  recibido=2026-09-25T15:56:01.907249Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#20  n= 20  recibido=2026-09-25T15:56:01.917840Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#21  n= 21  recibido=2026-09-25T15:56:01.928444Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#22  n= 22  recibido=2026-09-25T15:56:01.940521Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#23  n= 23  recibido=2026-09-25T15:56:01.950977Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#24  n= 24  recibido=2026-09-25T15:56:01.961923Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#25  n= 25  recibido=2026-09-25T15:56:01.974346Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#26  n= 26  recibido=2026-09-25T15:56:01.991798Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#27  n= 27  recibido=2026-09-25T15:56:02.002715Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#28  n= 28  recibido=2026-09-25T15:56:02.012048Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#29  n= 29  recibido=2026-09-25T15:56:02.021458Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#30  n= 30  recibido=2026-09-25T15:56:02.032786Z  aplicado
+ULT1-b07|2026-09-25T15:50:00Z  LATE#31  n= 30  recibido=2026-09-25T16:10:01.906891Z  aplicado
+ULT1-b07|2026-09-25T15:55:00Z  EARLY#0  n=  6  recibido=2026-09-25T15:56:06.254566Z  aplicado
+ULT1-b07|2026-09-25T15:55:00Z  EARLY#1  n=  7  recibido=2026-09-25T15:56:12.285759Z  aplicado
+ULT1-b07|2026-09-25T15:55:00Z  EARLY#2  n=  8  recibido=2026-09-25T15:56:24.680579Z  aplicado
+ULT1-b07|2026-09-25T15:55:00Z  EARLY#3  n=  9  recibido=2026-09-25T15:56:32.750938Z  aplicado
+ULT1-b07|2026-09-25T15:55:00Z  EARLY#4  n= 10  recibido=2026-09-25T15:56:44.062626Z  aplicado
+ULT1-b07|2026-09-25T15:55:00Z  EARLY#5  n= 11  recibido=2026-09-25T15:56:52.174852Z  aplicado
+ULT1-b07|2026-09-25T15:55:00Z  EARLY#6  n= 12  recibido=2026-09-25T15:57:04.452629Z  aplicado
+ULT1-b07|2026-09-25T15:55:00Z  EARLY#7  n= 13  recibido=2026-09-25T15:57:12.650363Z  aplicado
+ULT1-b07|2026-09-25T15:55:00Z  EARLY#8  n= 14  recibido=2026-09-25T15:57:23.910115Z  aplicado
+ULT1-b07|2026-09-25T15:55:00Z  EARLY#9  n= 15  recibido=2026-09-25T15:57:32.115031Z  aplicado
+ULT1-b07|2026-09-25T15:55:00Z  EARLY#10  n= 16  recibido=2026-09-25T15:57:44.315503Z  aplicado
+ULT1-b07|2026-09-25T15:55:00Z  EARLY#11  n= 17  recibido=2026-09-25T15:57:52.510239Z  aplicado
+ULT1-b07|2026-09-25T15:55:00Z  EARLY#12  n= 18  recibido=2026-09-25T15:58:04.785725Z  aplicado
+ULT1-b07|2026-09-25T15:55:00Z  EARLY#13  n= 19  recibido=2026-09-25T15:58:11.914349Z  aplicado
+ULT1-b07|2026-09-25T15:55:00Z  EARLY#14  n= 20  recibido=2026-09-25T15:58:33.382983Z  aplicado
+ULT1-b07|2026-09-25T15:55:00Z  EARLY#15  n= 21  recibido=2026-09-25T15:58:42.512924Z  aplicado
+ULT1-b07|2026-09-25T15:55:00Z  EARLY#16  n= 22  recibido=2026-09-25T15:58:54.837587Z  aplicado
+ULT1-b07|2026-09-25T15:55:00Z  EARLY#17  n= 23  recibido=2026-09-25T15:59:01.950311Z  aplicado
+ULT1-b07|2026-09-25T15:55:00Z  EARLY#18  n= 24  recibido=2026-09-25T15:59:14.258409Z  aplicado
+ULT1-b07|2026-09-25T15:55:00Z  EARLY#19  n= 25  recibido=2026-09-25T15:59:23.491999Z  aplicado
+ULT1-b07|2026-09-25T15:55:00Z  EARLY#20  n= 26  recibido=2026-09-25T15:59:34.725563Z  aplicado
+ULT1-b07|2026-09-25T15:55:00Z  EARLY#21  n= 27  recibido=2026-09-25T15:59:41.872634Z  aplicado
+ULT1-b07|2026-09-25T15:55:00Z  EARLY#22  n= 28  recibido=2026-09-25T15:59:54.101646Z  aplicado
+ULT1-b07|2026-09-25T15:55:00Z  ON_TIME#23  n= 29  recibido=2026-09-25T16:00:02.265634Z  aplicado
+ULT1-b07|2026-09-25T15:55:00Z  LATE#24  n= 29  recibido=2026-09-25T16:15:01.783368Z  aplicado
